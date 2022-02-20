@@ -1,0 +1,19 @@
+{
+  "name": "bbn/appui-shop",
+  "description": "A shopping system for APPUI",
+  "keywords": ["shop","product","retail","appui"],
+  "homepage": "https://github.com/nabab/appui-shop",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Nabet",
+      "email": "thomas.nabet@gmail.com",
+      "homepage": "https://bbn.solutions",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.0.0",
+    "bbn/bbn": "dev-master"
+  }
+}
