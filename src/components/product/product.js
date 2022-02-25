@@ -1,0 +1,9 @@
+(() => {
+  return {
+    data(){
+      return {
+        variants: []
+      }
+    }
+  };
+})()
