@@ -45,8 +45,11 @@
               }
             },
             methods: {
-              success() {
-                cp.source.variants.push(this.source);
+              success(d) {
+                if (d.success && d.data) {
+                  this.$set(this.source, "id", d.id);
+                  cp.source.variants.push(d.data);
+                }
               }
             }
           },
