@@ -1,14 +1,19 @@
 <?php
 
+use bbn\X;
+use bbn\Shop\Provider;
+use bbn\Appui\Grid;
+
 if ( !empty($model->data['limit']) ) {
   $db = $model->db;
-  $medias = new \bbn\Appui\Medias($db);
+  $prov = new Provider($model->db);
+  $cfg = $prov->getClassCfg();
   $grid = new \bbn\Appui\Grid($db, $model->data, [
-    'tables' => ['poc_providers'],
+    'tables' => [$cfg['table']],
     'fields' => [
-      'id',
-      'name',
-      'cfg',
+      $cfg['arch']['providers']['id'],
+      $cfg['arch']['providers']['name'],
+      $cfg['arch']['providers']['cfg'],
     ],
     'limit' => $model->data['limit'],
     'start' => $model->data['start']

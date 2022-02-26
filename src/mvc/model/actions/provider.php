@@ -5,38 +5,28 @@
  **/
 
 /** @var $model \bbn\Mvc\Model*/
-
+use bbn\Shop\Provider;
 if ($model->hasData('action', true)) {
-	switch ($model->data['action']) {
+  $action = $model->data['action'];
+  unset($model->data['action']);
+  $provider = new Provider($model->db);
+	switch ($action) {
     case 'insert':
-      if ( $success = $model->db->insert('poc_providers', [
-        'name' => $model->data['name'],
-        'cfg'  => $model->hasData('cfg', true) ? json_encode($model->data['cfg']) : null
-      ])){
-        $id_pr = $model->db->lastId();
-        $new_pr = $model->db->rselect('poc_providers', [], [
-          'id' => $id_pr
-        ]);
+      if ($id_pr = $provider->insert($model->data)) {
+        $new_pr = $provider->select($id_pr);
         return [
-          'success' => $success,
+          'success' => true,
           'provider' => $new_pr,
           'action' => 'insert'
         ];
       }
       break;
     case 'edit':
-      $new_pr = [];
-      if ( $success = $model->db->update('poc_providers', [
-        'name' => $model->data['name'],
-        'cfg'  => $model->hasData('cfg', true) ? json_encode($model->data['cfg']) : null
-      ], [
-        'id' => $model->data['id']
-      ])){
-        $new_pr = $model->db->rselect('poc_providers', [], [
-          'id' => $model->data['id']
-        ]);
+      if ($model->hasData('id', true) && $provider->update($model->data['id'], $model->data)) {
+        $new_pr = $provider->select($model->data['id']);
+
         return [
-          'success' => $success,
+          'success' => true,
           'provider' => $new_pr,
           'action' => 'edit'
         ];
@@ -44,9 +34,11 @@ if ($model->hasData('action', true)) {
       break;
 
 	  case 'delete':
-      return ['success' => (bool)$model->db->delete('poc_providers', [
-        'id' => $model->data['id']
-      ])];
+      if ($model->hasData('id', true) && $provider->delete($model->data['id'])) {
+        return [
+          'success' => true,
+        ];
+      }
       break;
   }
 }
