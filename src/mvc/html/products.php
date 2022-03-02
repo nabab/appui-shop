@@ -1,5 +1,5 @@
 <!-- HTML Document -->
-<div class="bbn-overlay poc-products-container">
+<div class="bbn-overlay appui-shop-products-container">
   <bbn-router :nav="true"
               :storage="true"
               :base-url="root + 'products/'">

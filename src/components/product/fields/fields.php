@@ -1,6 +1,6 @@
 <!-- HTML Document -->
 
-<div class="poc-product-fields bbn-grid-fields bbn-c bbn-padded bbn-m">
+<div class="appui-shop-product-fields bbn-grid-fields bbn-c bbn-padded bbn-m">
   <label><?= _("Title") ?></label>
   <bbn-input v-model="source.title"
              :required="true"/>

@@ -1,4 +1,4 @@
-<div class="poc-photographers-container">
+<div class="appui-shop-photographers-container">
   <bbn-table source="admin/providers"
              ref="table"
              :limit="10"
@@ -8,8 +8,8 @@
              :filterable="true"
              editable="popup"
              :storage="true"
-             storage-full-name="poc-admin-providers"
-             editor="poc-provider-form"
+             storage-full-name="appui-shop-admin-providers"
+             editor="appui-shop-provider-form"
              :toolbar="[{
               text: '<?=_('New provider')?>',
               icon: 'nf nf-fa-plus',
