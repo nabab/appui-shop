@@ -12,8 +12,8 @@ if ($model->hasData('action', true)) {
   $provider = new Provider($model->db);
 	switch ($action) {
     case 'insert':
-      if ($id_pr = $provider->insert($model->data)) {
-        $new_pr = $provider->select($id_pr);
+      if ($id_pr = $provider->add($model->data['name'], $model->data['cfg'])) {
+        $new_pr = $provider->get($id_pr);
         return [
           'success' => true,
           'provider' => $new_pr,
@@ -23,7 +23,7 @@ if ($model->hasData('action', true)) {
       break;
     case 'edit':
       if ($model->hasData('id', true) && $provider->update($model->data['id'], $model->data)) {
-        $new_pr = $provider->select($model->data['id']);
+        $new_pr = $provider->get($model->data['id']);
 
         return [
           'success' => true,

@@ -1,9 +1,14 @@
 (() => {
   return {
+    data(){
+      return {
+        root: appui.plugins['appui-shop']
+      };
+    },
     methods: {
       deleteProvider(a, b, c){
         this.confirm(bbn._('Are you sure you want to delete '+ a.name +'?'), () => {
-          this.post('admin/actions/provider/delete', a, (d) => {
+          this.post(this.root + '/actions/provider/delete', a, (d) => {
             if (d.success){
               this.getRef('table').currentData.splice(c, 1)
               appui.success(a.name + ' ' + bbn._('successfully deleted!'));
@@ -19,7 +24,7 @@
           title: bbn._('Edit provider'),
           scrollable:true,
           source: a,
-          component: this.$options.components['providers-form'],
+          component: 'appui-shop-provider-form',
           height: '80%',
           width: '80%'
         })

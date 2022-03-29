@@ -1,5 +1,5 @@
 <div class="appui-shop-photographers-container">
-  <bbn-table source="admin/providers"
+  <bbn-table :source="root + '/providers'"
              ref="table"
              :limit="10"
              :info="true"
