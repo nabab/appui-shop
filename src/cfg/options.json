@@ -1,0 +1,59 @@
+{
+  "cfg": {
+    "show_code": 1,
+    "allow_children": 1,
+    "show_icon": 1,
+    "i18n": "en"
+  },
+  "text": "Shop",
+  "code": "shop",
+  "icon": "nf nf-fa-shopping_cart",
+  "plugin": true,
+  "id_parent": ["appui"],
+  "items": [
+    {
+      "text": "Product types",
+      "code": "product_types",
+      "icon": "nf nf-mdi-shape_plus",
+      "tekname": "product_types",
+      "items": [
+      ],
+      "cfg": {
+        "show_code": 1
+      }
+    },
+    {
+      "id": "21af497e2d3e11eca47652540000cfbe",
+      "text": "Continents",
+      "code": "continents",
+      "icon": "nf nf-fa-map",
+      "tekname": "continents",
+      "items": [
+          {
+              "text": "Africa",
+              "code": "AF"
+          },
+          {
+              "text": "Asia",
+              "code": "AS"
+          },
+          {
+              "text": "Europe",
+              "code": "EU"
+          },
+          {
+              "text": "North America",
+              "code": "NA"
+          },
+          {
+              "text": "Oceania",
+              "code": "OC"
+          },
+          {
+              "text": "South America",
+              "code": "SA"
+          }
+      ]
+    }
+  ]
+}
