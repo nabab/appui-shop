@@ -22,7 +22,7 @@ if ($model->hasData('action', true)) {
       }
       break;
     case 'edit':
-      if ($model->hasData('id', true) && $provider->update($model->data['id'], $model->data)) {
+      if ($model->hasData('id', true) && $provider->edit($model->data['id'], $model->data)) {
         $new_pr = $provider->get($model->data['id']);
 
         return [
@@ -41,4 +41,6 @@ if ($model->hasData('action', true)) {
       }
       break;
   }
+
+  return ['success' => false];
 }

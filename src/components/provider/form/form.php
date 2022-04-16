@@ -1,4 +1,4 @@
-<div :class="componentClass"
+<div :class="[componentClass, 'bbn-w-100']"
      style="min-height: 50vh">
   <bbn-form ref="form"
             :action="root + (source.row.id ? 'actions/provider/edit' : 'actions/provider/insert')"
@@ -6,19 +6,18 @@
             @success="success"
             :prefilled="true"
             :scrollable="false">
-    <div class="bbn-overlay bbn-flex-height">
+    <div class="bbn-w-100">
       <div class="bbn-grid-fields bbn-lpadded">
         <label class="bbn-b">
           <?=_ ('Name') ?>
         </label>
         <bbn-input v-model="source.row.name"
                    required="required"
-                   :required="true">
-        </bbn-input>
+                   :required="true"/>
       </div>
-      <div class="bbn-flex-fill">
-        <appui-shop-provider-costs :source="source.row.cfg"></appui-shop-provider-costs>
-      </div>
+    </div>
+    <div class="bbn-w-100">
+      <appui-shop-provider-costs :source="source.row.cfg"/>
     </div>
   </bbn-form>
 </div>
