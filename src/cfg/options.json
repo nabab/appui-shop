@@ -53,6 +53,39 @@
               "code": "SA"
           }
       ]
+    },
+    {
+      "text": "Plugins",
+      "code": "plugins",
+      "items": [
+        {
+          "text": "Notes",
+          "code": "note",
+          "items": [
+            {
+              "text": "Notes types",
+              "code": "types",
+              "items": [
+                {
+                  "id_alias": [
+                    "bbn-cms",
+                    "editors",
+                    "note",
+                    "appui"
+                  ],
+                  "text": "Post",
+                  "code": "post",
+                  "prefix": "product\/",
+                  "front_img": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cfg": {
+        "show_code": 1
+      }
     }
   ]
 }
