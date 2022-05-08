@@ -1,14 +1,9 @@
 (() => {
   return {
     props: {
-      providers: {
-        type: Array
-      },
-      tags: {
-        type: Array
-      },
-      notesTypes: {
-        type: Array
+      source: {
+        type: Object,
+        required: true
       },
       users: {
         type: Array,
@@ -40,6 +35,9 @@
     data(){
       let cp = appui.getRegistered('products');
       return {
+        providers: this.source.providers,
+        tags: this.source.tags,
+        notesTypes: this.source.noteTypes,
         columns: [{
           field: "id_type",
           title: bbn._("Type of note"),
@@ -113,7 +111,7 @@
             source: {
               url: this.root + 'actions/products/insert',
             },
-            types: this.types
+            types: this.notesTypes
           }
         });
       },
@@ -273,7 +271,7 @@
         return a.num_media;
       },
       renderType(a){
-        return bbn.fn.getField(this.types, 'text', 'value', a.id_type);
+        return bbn.fn.getField(this.notesTypes, 'text', 'value', a.id_type);
       },
       renderProvider(a){
         return bbn.fn.getField(this.providers, 'text', 'value', a.id_provider);
