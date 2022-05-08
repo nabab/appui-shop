@@ -19,19 +19,20 @@
     <label class="bbn-b">
       <?=_('Web URL')?>
     </label>
-    <appui-note-cms-url :source="source.row"
-                        class="bbn-wider"
-                        :readonly="true"/>
+    <appui-note-field-url :source="source.row"
+                          class="bbn-wider"
+                          v-model="source.row.url"
+                          :readonly="true"/>
 
     <label v-if="source.row.id"
            class="bbn-b"
            style="margin-top:10px">
       <?=_('Front Image')?>
     </label>
-    <bbn-button v-if="source.row.id"
-                text="Select Front Image"
-                type="button"
-                :action="openPicker"/>
+    <div>
+      <appui-note-media-field v-model="source.row.id_media"
+                              :source="source.row.medias || []"/>
+    </div>
 
     <label class="bbn-b">
       <?=_('Provider')?>

@@ -6,34 +6,21 @@
              :required="true"/>
 
   <label><?= _("Public URL") ?></label>
-  <appui-note-cms-url :source="source"
-                      prefix="product/"
-                      :readonly="true"/>
+  <appui-note-field-url :source="source"
+                        prefix="product/"
+                        v-model="source.url"
+                        :readonly="true"/>
 
   <label><?= _("Description") ?></label>
   <bbn-textarea v-model="source.excerpt"
                 style="height: 10em; max-height: 20vh"/>
 
-  <label v-if="source.id"
-         style="margin-top:10px">
+  <label style="margin-top:10px">
     <?=_('Front Image')?>
   </label>
-  <div v-if="source.id">
-    <div class="appui-note-cms-block-image-preview bbn-flex">
-      <div>
-        <bbn-button icon="nf nf-fae-galery"
-                    :notext="false"
-                    @click="openGallery"
-                    title="<?=_('Select an image')?>"
-                    class="bbn-right-sspace"/>
-      </div>
-      <div>
-        <img class="bbn-bordered bbn-radius"
-             style="max-height: 12em; width: auto; max-width: 100%"
-             :src="source.source"
-             v-if="!!source.source">
-      </div>
-    </div>
+  <div>
+    <appui-note-media-field v-model="source.id_media"
+                            :source="source.medias"/>
   </div>
 
   <label>
