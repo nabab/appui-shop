@@ -45,13 +45,6 @@
           filterable: false,
           showable: false
         }, {
-          field: "front_img",
-          title: bbn._("Cover image"),
-          render: this.renderFrontImg,
-          editable: false,
-          cls: "bbn-middle",
-          width: 100
-        }, {
           field: 'id_provider',
           render: this.renderProvider,
           title: bbn._("Provider"),
