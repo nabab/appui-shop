@@ -6,10 +6,6 @@
               "columns": [
                   "id"
               ],
-              "ref_table": "bbn_history_uids",
-              "ref_column": "bbn_uid",
-              "update": "CASCADE",
-              "delete": "CASCADE",
               "unique": 1
           },
           "id_client": {
@@ -78,10 +74,6 @@
               "columns": [
                   "id"
               ],
-              "ref_table": "bbn_history_uids",
-              "ref_column": "bbn_uid",
-              "update": "CASCADE",
-              "delete": "CASCADE",
               "unique": 1
           },
           "id_cart": {
@@ -204,10 +196,6 @@
               "columns": [
                   "id"
               ],
-              "ref_table": "bbn_history_uids",
-              "ref_column": "bbn_uid",
-              "update": "CASCADE",
-              "delete": "CASCADE",
               "unique": 1
           },
           "id_client": {
@@ -284,7 +272,7 @@
               ],
               "unique": 1
           },
-          "id": {
+          "id_provider": {
               "columns": [
                   "id_provider"
               ],
@@ -500,10 +488,6 @@
               "columns": [
                   "id"
               ],
-              "ref_table": "bbn_history_uids",
-              "ref_column": "bbn_uid",
-              "update": "CASCADE",
-              "delete": "CASCADE",
               "unique": 1
           },
           "id_cart": {
