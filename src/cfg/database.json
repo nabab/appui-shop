@@ -1,0 +1,623 @@
+
+{
+  "bbn_shop_cart": {
+      "keys": {
+          "PRIMARY": {
+              "columns": [
+                  "id"
+              ],
+              "ref_table": "bbn_history_uids",
+              "ref_column": "bbn_uid",
+              "update": "CASCADE",
+              "delete": "CASCADE",
+              "unique": 1
+          },
+          "id_client": {
+              "columns": [
+                  "id_client"
+              ],
+              "ref_table": "bbn_shop_clients",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "RESTRICT",
+              "unique": 0
+          },
+          "id_session": {
+              "columns": [
+                  "id_session"
+              ],
+              "ref_table": "bbn_users_sessions",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "SET NULL",
+              "unique": 0
+          }
+      },
+      "cols": {
+          "id": [
+              "PRIMARY"
+          ],
+          "id_client": [
+              "id_client"
+          ],
+          "id_session": [
+              "id_session"
+          ]
+      },
+      "fields": {
+          "id": {
+              "type": "binary",
+              "null": 0,
+              "key": "PRI",
+              "maxlength": 16
+          },
+          "id_session": {
+              "type": "binary",
+              "null": 1,
+              "key": "MUL",
+              "default": "NULL",
+              "maxlength": 16
+          },
+          "id_client": {
+              "type": "binary",
+              "null": 1,
+              "key": "MUL",
+              "default": "NULL",
+              "maxlength": 16
+          },
+          "creation": {
+              "type": "datetime",
+              "null": 0,
+              "key": null
+          }
+      }
+  },
+  "bbn_shop_cart_products": {
+      "keys": {
+          "PRIMARY": {
+              "columns": [
+                  "id"
+              ],
+              "ref_table": "bbn_history_uids",
+              "ref_column": "bbn_uid",
+              "update": "CASCADE",
+              "delete": "CASCADE",
+              "unique": 1
+          },
+          "id_cart": {
+              "columns": [
+                  "id_cart"
+              ],
+              "ref_table": "bbn_shop_cart",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "CASCADE",
+              "unique": 0
+          },
+          "id_product": {
+              "columns": [
+                  "id_product"
+              ],
+              "ref_table": "bbn_shop_products",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "RESTRICT",
+              "unique": 0
+          }
+      },
+      "cols": {
+          "id": [
+              "PRIMARY"
+          ],
+          "id_cart": [
+              "id_cart"
+          ],
+          "id_product": [
+              "id_product"
+          ]
+      },
+      "fields": {
+          "id": {
+              "type": "binary",
+              "null": 0,
+              "key": "PRI",
+              "maxlength": 16
+          },
+          "id_cart": {
+              "type": "binary",
+              "null": 0,
+              "key": "MUL",
+              "maxlength": 16
+          },
+          "id_product": {
+              "type": "binary",
+              "null": 0,
+              "key": "MUL",
+              "maxlength": 16
+          },
+          "quantity": {
+              "type": "int",
+              "null": 0,
+              "signed": 0,
+              "maxlength": 10
+          },
+          "amount": {
+              "type": "decimal",
+              "null": 0,
+              "signed": 0,
+              "maxlength": 14,
+              "decimals": 2
+          },
+          "date_added": {
+              "type": "datetime",
+              "null": 0
+          }
+      }
+  },
+  "bbn_shop_clients": {
+      "keys": {
+          "PRIMARY": {
+              "columns": [
+                  "id"
+              ],
+              "unique": 1
+          },
+          "email": {
+              "columns": [
+                  "email"
+              ],
+              "unique": 1
+          }
+      },
+      "cols": {
+          "id": [
+              "PRIMARY"
+          ],
+          "email": [
+              "email"
+          ]
+      },
+      "fields": {
+          "id": {
+              "type": "binary",
+              "null": 0,
+              "key": "PRI",
+              "maxlength": 16
+          },
+          "name": {
+              "type": "varchar",
+              "null": 0,
+              "key": null,
+              "maxlength": 100
+          },
+          "email": {
+              "type": "varchar",
+              "null": 0,
+              "key": "UNI",
+              "maxlength": 100
+          }
+      }
+  },
+  "bbn_shop_clients_addresses": {
+      "keys": {
+          "PRIMARY": {
+              "columns": [
+                  "id"
+              ],
+              "ref_table": "bbn_history_uids",
+              "ref_column": "bbn_uid",
+              "update": "CASCADE",
+              "delete": "CASCADE",
+              "unique": 1
+          },
+          "id_client": {
+              "columns": [
+                  "id_client"
+              ],
+              "ref_table": "bbn_shop_clients",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "CASCADE",
+              "unique": 0
+          },
+          "id_address": {
+              "columns": [
+                  "id_address"
+              ],
+              "ref_table": "bbn_addresses",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "RESTRICT",
+              "unique": 0
+          }
+      },
+      "cols": {
+          "id": [
+              "PRIMARY"
+          ],
+          "id_client": [
+              "id_client"
+          ],
+          "id_address": [
+              "id_address"
+          ]
+      },
+      "fields": {
+          "id": {
+              "type": "binary",
+              "null": 0,
+              "key": "PRI",
+              "maxlength": 16
+          },
+          "id_client": {
+              "type": "binary",
+              "null": 0,
+              "key": "MUL",
+              "maxlength": 16
+          },
+          "id_address": {
+              "type": "binary",
+              "null": 0,
+              "key": "MUL",
+              "maxlength": 16
+          },
+          "def": {
+              "type": "tinyint",
+              "null": 0,
+              "key": null,
+              "signed": 0,
+              "default": 0,
+              "maxlength": 1
+          },
+          "last": {
+              "type": "datetime",
+              "null": 0,
+              "key": null
+          }
+      }
+  },
+  "bbn_shop_products": {
+      "keys": {
+          "PRIMARY": {
+              "columns": [
+                  "id"
+              ],
+              "unique": 1
+          },
+          "id": {
+              "columns": [
+                  "id_provider"
+              ],
+              "ref_table": "bbn_shop_providers",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "RESTRICT",
+              "unique": 0
+          },
+          "id_edition": {
+              "columns": [
+                  "id_edition"
+              ],
+              "ref_table": "bbn_options",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "RESTRICT",
+              "unique": 0
+          },
+          "id_type": {
+              "columns": [
+                  "product_type"
+              ],
+              "ref_table": "bbn_options",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "RESTRICT",
+              "unique": 0
+          },
+          "front_img": {
+              "columns": [
+                  "front_img"
+              ],
+              "ref_table": "bbn_medias",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "RESTRICT",
+              "unique": 0
+          },
+          "id_note": {
+              "columns": [
+                  "id_note"
+              ],
+              "ref_table": "bbn_notes",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "RESTRICT",
+              "unique": 0
+          },
+          "id_main": {
+              "columns": [
+                  "id_main"
+              ],
+              "unique": 0
+          }
+      },
+      "cols": {
+          "id": [
+              "PRIMARY"
+          ],
+          "id_provider": [
+              "id"
+          ],
+          "id_edition": [
+              "id_edition"
+          ],
+          "product_type": [
+              "id_type"
+          ],
+          "front_img": [
+              "front_img"
+          ],
+          "id_note": [
+              "id_note"
+          ],
+          "id_main": [
+              "id_main"
+          ]
+      },
+      "fields": {
+          "id": {
+              "type": "binary",
+              "null": 0,
+              "key": "PRI",
+              "maxlength": 16
+          },
+          "id_provider": {
+              "type": "binary",
+              "null": 0,
+              "key": "MUL",
+              "maxlength": 16
+          },
+          "id_note": {
+              "type": "binary",
+              "null": 0,
+              "key": "MUL",
+              "maxlength": 16
+          },
+          "id_main": {
+              "type": "binary",
+              "null": 1,
+              "key": "MUL",
+              "default": "NULL",
+              "maxlength": 16
+          },
+          "price_purchase": {
+              "type": "decimal",
+              "null": 1,
+              "signed": 1,
+              "default": "NULL",
+              "maxlength": 14,
+              "decimals": 2
+          },
+          "price": {
+              "type": "decimal",
+              "null": 1,
+              "signed": 1,
+              "default": "NULL",
+              "maxlength": 14,
+              "decimals": 2
+          },
+          "dimensions": {
+              "type": "varchar",
+              "null": 1,
+              "extra": "",
+              "default": "NULL",
+              "maxlength": 100
+          },
+          "weight": {
+              "type": "int",
+              "null": 1,
+              "default": "NULL",
+              "maxlength": 10
+          },
+          "product_type": {
+              "type": "binary",
+              "null": 0,
+              "key": "MUL",
+              "maxlength": 16
+          },
+          "id_edition": {
+              "type": "binary",
+              "null": 1,
+              "key": "MUL",
+              "default": "NULL",
+              "maxlength": 16
+          },
+          "stock": {
+              "type": "int",
+              "null": 0,
+              "signed": 1,
+              "maxlength": 10
+          },
+          "front_img": {
+              "type": "binary",
+              "null": 1,
+              "key": "MUL",
+              "default": "NULL",
+              "maxlength": 16
+          },
+          "active": {
+              "type": "tinyint",
+              "null": 0,
+              "signed": 1,
+              "maxlength": 1
+          },
+          "cfg": {
+              "type": "longtext",
+              "null": 1,
+              "default": "NULL"
+          }
+      }
+  },
+  "bbn_shop_providers": {
+      "keys": {
+          "PRIMARY": {
+              "columns": [
+                  "id"
+              ],
+              "unique": 1
+          }
+      },
+      "cols": {
+          "id": [
+              "PRIMARY"
+          ]
+      },
+      "fields": {
+          "id": {
+              "position": 1,
+              "type": "binary",
+              "null": 0,
+              "key": "PRI",
+              "maxlength": 16
+          },
+          "name": {
+              "position": 2,
+              "type": "varchar",
+              "null": 0,
+              "maxlength": 100
+          },
+          "cfg": {
+              "position": 3,
+              "type": "longtext",
+              "null": 1,
+              "default": "NULL"
+          }
+      }
+  },
+  "bbn_shop_transactions": {
+      "keys": {
+          "PRIMARY": {
+              "columns": [
+                  "id"
+              ],
+              "ref_table": "bbn_history_uids",
+              "ref_column": "bbn_uid",
+              "update": "CASCADE",
+              "delete": "CASCADE",
+              "unique": 1
+          },
+          "id_cart": {
+              "columns": [
+                  "id_cart"
+              ],
+              "ref_table": "bbn_shop_cart",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "RESTRICT",
+              "unique": 0
+          },
+          "id_client": {
+              "columns": [
+                  "id_client"
+              ],
+              "ref_table": "bbn_shop_clients",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "RESTRICT",
+              "unique": 0
+          },
+          "id_address": {
+              "columns": [
+                  "id_address"
+              ],
+              "ref_table": "bbn_shop_clients_addresses",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "RESTRICT",
+              "unique": 0
+          },
+          "payment_type": {
+              "columns": [
+                  "payment_type"
+              ],
+              "ref_table": "bbn_options",
+              "ref_column": "id",
+              "update": "CASCADE",
+              "delete": "RESTRICT",
+              "unique": 0
+          }
+      },
+      "cols": {
+          "id": [
+              "PRIMARY"
+          ],
+          "id_cart": [
+              "id_cart"
+          ],
+          "id_client": [
+              "id_client"
+          ],
+          "id_address": [
+              "id_address"
+          ],
+          "payment_type": [
+              "payment_type"
+          ]
+      },
+      "fields": {
+          "id": {
+              "type": "binary",
+              "null": 0,
+              "key": "PRI",
+              "maxlength": 16
+          },
+          "id_cart": {
+              "type": "binary",
+              "null": 0,
+              "key": "MUL",
+              "maxlength": 16
+          },
+          "id_client": {
+              "type": "binary",
+              "null": 0,
+              "key": "MUL",
+              "maxlength": 16
+          },
+          "total": {
+              "type": "decimal",
+              "null": 0,
+              "signed": 1,
+              "maxlength": 14,
+              "decimals": 2
+          },
+          "moment": {
+              "type": "datetime",
+              "null": 0
+          },
+          "id_address": {
+              "type": "binary",
+              "null": 0,
+              "key": "MUL",
+              "maxlength": 16
+          },
+          "payment_type": {
+              "type": "binary",
+              "null": 0,
+              "key": "MUL",
+              "maxlength": 16
+          },
+          "status": {
+              "type": "enum",
+              "null": 0,
+              "extra": "'failed','success','ready','proceeding'",
+              "default": "ready",
+              "values": [
+                  "failed",
+                  "success",
+                  "ready",
+                  "proceeding"
+              ]
+          }
+      }
+  }
+}
