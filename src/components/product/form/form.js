@@ -8,8 +8,16 @@
         cp: appui.getRegistered('products'),
         file: [],
         date: bbn.fn.timestamp(),
+        root: appui.plugins['appui-shop'] + '/',
         types: appui.options.product_types,
-        editions: appui.options.editions
+        editions: appui.options.editions,
+        prefix: 'product/',
+        formData: {
+          title: '',
+          type: this.id_type || '',
+          url: '',
+          lang: bbn.env.lang
+        }
       };
     },
     computed:{
@@ -36,7 +44,7 @@
             }
           }
 
-          bbn.fn.link('admin/products/editor/' + d.data.id);
+          bbn.fn.link(this.root + 'products/product/' + d.data.id);
         }
         else if (d.error) {
           appui.error(d.error);

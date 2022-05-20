@@ -95,19 +95,6 @@
       };
     },
     methods: {
-      insertNote(){
-        this.getPopup({
-          width: 800,
-          title: bbn._('New') + ' ' + this.noteName,
-          component: this.getComponentName('../new'),
-          componentOptions: {
-            source: {
-              url: this.root + 'actions/products/insert',
-            },
-            types: this.notesTypes
-          }
-        });
-      },
       // methods each row of the table
       editNote(row){
         bbn.fn.link(this.root + 'products/product/' + row.id);
@@ -293,19 +280,23 @@
       },
       success(d){
         if ( d.success ){
-          this.$refs.table.updateData();
+          this.$refs.list.updateData();
         }
         else{
           appui.error(bbn._('Something went wrong :('));
         }
       },
       insert(){
+        bbn.fn.log("insert");
         this.getPopup().open({
           title: bbn._('New product'),
-          source : {},
+          source : {
+            row: {
+            }
+          },
           width: '600px',
           heigth: '600px',
-          component: this.$options.components['product-form'],
+          component: this.$options.components.insert,
         });
       },
     },
@@ -317,13 +308,31 @@
     },
     components: {
       insert: {
-        template: `<bbn-form :source="source" :action="root + 'actions/product/insert'"><appui-shop-product-fields :source="source"/></bbn-form>`,
-        props: ['source'],
+        template: `
+<bbn-form :source="source.row"
+          :action="root + 'actions/product/insert'">
+  <appui-shop-product-fields :source="data"/>
+</bbn-form>
+`,
+        props: {
+          id_type: {
+            type: String
+          }
+        },
         data(){
+          let formData = {
+            title: '',
+            type: this.id_type || '',
+            url: '',
+            lang: bbn.env.lang
+          };
           return {
+            data: {
+              row: formData
+            },
             root: appui.plugins['appui-shop'] + '/'
           }
-        }
+        },
       },
       toolbar: {
         template: `

@@ -2,6 +2,11 @@
 
 (() => {
   return {
+    props: {
+      source: {
+        type: Object
+      }
+    },
     data(){
       let cp = appui.getRegistered('products');
       return {
