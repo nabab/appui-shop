@@ -179,8 +179,7 @@
           "name": {
               "type": "varchar",
               "null": 0,
-              "key": null,
-              "maxlength": 100
+                    "maxlength": 100
           },
           "email": {
               "type": "varchar",
@@ -252,8 +251,7 @@
           "def": {
               "type": "tinyint",
               "null": 0,
-              "key": null,
-              "signed": 0,
+                    "signed": 0,
               "default": 0,
               "maxlength": 1
           },
@@ -397,7 +395,6 @@
           "dimensions": {
               "type": "varchar",
               "null": 1,
-              "extra": "",
               "default": "NULL",
               "maxlength": 100
           },
@@ -440,9 +437,10 @@
               "maxlength": 1
           },
           "cfg": {
-              "type": "longtext",
+              "type": "json",
               "null": 1,
-              "default": "NULL"
+              "default": "NULL",
+              "defaultExpression": 1
           }
       }
   },
@@ -476,9 +474,10 @@
           },
           "cfg": {
               "position": 3,
-              "type": "longtext",
+              "type": "json",
               "null": 1,
-              "default": "NULL"
+              "default": "NULL",
+              "defaultExpression": 1
           }
       }
   },
