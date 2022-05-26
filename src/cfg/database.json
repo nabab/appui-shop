@@ -420,7 +420,7 @@
           "stock": {
               "type": "int",
               "null": 0,
-              "signed": 1,
+              "signed": 0,
               "maxlength": 10
           },
           "front_img": {
@@ -433,7 +433,7 @@
           "active": {
               "type": "tinyint",
               "null": 0,
-              "signed": 1,
+              "signed": 0,
               "maxlength": 1
           },
           "cfg": {
@@ -460,20 +460,17 @@
       },
       "fields": {
           "id": {
-              "position": 1,
               "type": "binary",
               "null": 0,
               "key": "PRI",
               "maxlength": 16
           },
           "name": {
-              "position": 2,
               "type": "varchar",
               "null": 0,
               "maxlength": 100
           },
           "cfg": {
-              "position": 3,
               "type": "json",
               "null": 1,
               "default": "NULL",
