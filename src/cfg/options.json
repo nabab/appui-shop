@@ -60,11 +60,16 @@
       "items": [
         {
           "text": "Notes",
-          "code": "note",
+          "code": "appui-note",
           "items": [
             {
               "text": "Notes types",
               "code": "types",
+              "id_alias": [
+                "types",
+                "note",
+                "appui"
+              ],
               "items": [
                 {
                   "id_alias": [
