@@ -186,6 +186,20 @@
               "null": 0,
               "key": "UNI",
               "maxlength": 100
+          },
+          "newsletter": {
+              "type": "tinyint",
+              "null": 0,
+              "signed": 0,
+              "default": 0,
+              "maxlength": 1
+          },
+          "active": {
+              "type": "tinyint",
+              "null": 0,
+              "signed": 0,
+              "default": 1,
+              "maxlength": 1
           }
       }
   },
@@ -259,6 +273,13 @@
               "type": "datetime",
               "null": 0,
               "key": null
+          },
+          "active": {
+              "type": "tinyint",
+              "null": 0,
+              "signed": 0,
+              "default": 1,
+              "maxlength": 1
           }
       }
   },
