@@ -7,7 +7,7 @@ use bbn\Appui\Search;
 $id_type = $model->inc->options->fromCode('products', 'types', 'appui-note', 'plugins', 'shop', 'appui');
 $url = $model->pluginUrl('appui-shop');
 return Search::register(function($search) use ($url, $types_cond) {
-  $fields = ['id' => 'bbn_shop_products.id', 'bbn_shop_products.id_note', 'version', 'bbn_notes.id_type', 'code', 'type' => 'bbn_options.text', 'title', 'latest', 'match' => "'Found in content'"];
+  $fields = ['id' => 'bbn_shop_products.id', 'bbn_shop_products.id_note', 'version', 'bbn_notes.id_type', 'code', 'type' => 'bbn_options.text', 'title', 'latest', 'match' => "'Found in product content'"];
   return [
     'score' => 10,
     'component' => 'appui-shop-search-item',
