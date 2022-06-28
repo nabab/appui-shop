@@ -257,10 +257,10 @@
         return bbn.fn.getField(this.providers, 'text', 'value', a.id_provider);
       },
       renderSell(a){
-        return bbn.fn.money(a.price);
+        return bbn.fn.money(a.price, false, '€', false, '.' ,false, 2); 
       },
       renderPurchase(a){
-        return bbn.fn.money(a.price_purchase);
+        return bbn.fn.money(a.price_purchase, false, '€', false, '.' ,false, 2); 
       },
       renderWeight(a){
         return a.weight ? a.weight + ' Gr.' : '-';
