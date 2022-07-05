@@ -1,18 +1,22 @@
 <?php
+use bbn\X;
+use bbn\Appui\Note;
+use bbn\Appui\Cms;
+use bbn\Shop\Product;
+
 /**
  * What is my purpose?
  *
  **/
 
-use bbn\X;
 
 /** @var $model \bbn\Mvc\Model*/
 
 if ($model->hasData('action', true)) {
   $res = ['success' => false];
-  $notes = new bbn\Appui\Note($model->db);
-  $cms = new \bbn\Appui\Cms($model->db, $notes);
-  $product = new bbn\Shop\Product($model->db);
+  $notes = new Note($model->db);
+  $cms = new Cms($model->db, $notes);
+  $product = new Product($model->db);
   $err_st = "The value of %s is mandatory";
   $action = $model->data['action'];
   unset($model->data['action']);
