@@ -1,3 +1,4 @@
+
 <div class="appui-shop-transactions">
   <bbn-table :source="root + '/transactions'"
              ref="table"
