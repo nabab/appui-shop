@@ -33,7 +33,7 @@
             <bbn-button v-if="source.id_main"
                         text="<?= _("Delete variant") ?>"
                         :notext="true"
-                        @click="openEditor"
+                        @click="deleteVariant"
                         class="bbn-right-space"
                         icon="nf nf-fa-trash_o"/>
             <bbn-context :source="[]"
