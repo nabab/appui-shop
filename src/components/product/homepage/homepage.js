@@ -33,9 +33,9 @@
                :focused="true"/>
 
     <label v-text="_('Public URL')"/>
-    <appui-note-cms-url :source="source"
+    <appui-note-field-url :source="source"
                         prefix="product/"
-                        :readonly="true"/>
+                        />
   </div>
 </bbn-form>`,
             props: ['source'],

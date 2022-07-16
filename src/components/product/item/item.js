@@ -9,6 +9,7 @@
     },
     data(){
       return {
+        root: appui.plugins['appui-shop'] + '/',
         salesPeriods: {
           d: bbn._("Today"),
           w: bbn._("This week"),
@@ -42,6 +43,23 @@
       }
     },
     methods: {
+      deleteVariant(row) {
+        appui.confirm(bbn._('Are you sure to delete this variant?'), () => {
+          bbn.fn.post(this.root + 'actions/product/delete',{id: this.source.id}, d =>{
+            if (d.success) { 
+              let idx = bbn.fn.search(this.closest('appui-shop-product-homepage').source.variants, 'url', this.source.url)
+              if(idx > -1){
+                this.closest('appui-shop-product-homepage').source.variants.splice(idx, 1);
+                appui.success(bbn._('Successfully deleted'));
+              }
+              
+            }
+            else{
+              appui.error(bbn._('Error while deleting'));
+            }
+          });
+        });
+      },
       fdate: bbn.fn.fdate,
       money: bbn.fn.money,
       openEditor() {
