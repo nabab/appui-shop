@@ -2,6 +2,7 @@
 
 <div class="appui-shop-product-item bbn-bordered bbn-radius bbn-hlpadded bbn-vpadded bbn-w-100">
   <div class="bbn-grid">
+    
     <div class="bbn-100 bbn-middle">
       <img :src="source.front_img ? source.front_img.path : ''"
            style="max-height: 100%; width: auto; max-width: 10em">

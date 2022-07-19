@@ -28,7 +28,6 @@
           let end = dayjs(this.source.end);
           return end.isAfter(newDate());
         }
-        
         return false;
       },
       realSales() {

@@ -5,6 +5,7 @@
         root: appui.plugins['appui-shop'] + '/'
       }
     },
+    
     methods: {
       addVariant(){
         let v = bbn.fn.clone(this.source);
