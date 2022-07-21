@@ -4,6 +4,9 @@
       return {
         root: appui.plugins['appui-shop'],
         status:[{
+          text: 'All',
+          value: null
+        },{
           text: 'Failed',
           value: 'failed'
         },{
@@ -75,7 +78,7 @@
         },
         methods:{
           filterTable(){
-            let table = this.parent.getRef('table'),
+            let table = this.closest('bbn-table'),
             idx = bbn.fn.search(table.currentFilters.conditions, 'field', 'status');
             if ( idx > -1 ){
               if(this.filterStatus){
@@ -99,7 +102,7 @@
           }
         },
         mounted(){
-          let table = this.parent.getRef('table'),
+          let table = this.closest('bbn-table'),
             idx = bbn.fn.search(table.currentFilters.conditions, 'field', 'status');
             if ( idx > -1 ){
               this.filterStatus = table.currentFilters.conditions[idx].value
