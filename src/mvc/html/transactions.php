@@ -19,6 +19,11 @@
                  :render="renderClientName"
                  title="<?=_("Client name")?>">
     </bbns-column>
+    <bbns-column field="cart"
+                 :component="$options.components.cart"
+                 title="<?=_("Cart")?>"
+                 :width="30">
+    </bbns-column>
 
     <bbns-column field="total"
                  :width="100"
@@ -36,8 +41,7 @@
     <bbns-column field="status"
                  :width="100"
                  :component="$options.components.status"
-                
-                 title="<?=_("Status")?>">
+                title="<?=_("Status")?>">
     </bbns-column>
     <bbns-column field="moment"
                  type="datetime"
