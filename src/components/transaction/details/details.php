@@ -26,5 +26,4 @@
                  title="<?=_("Provider")?>">
     </bbns-column>
   </bbn-table>
-  
 </div>

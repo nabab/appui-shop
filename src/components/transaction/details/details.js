@@ -1,7 +1,6 @@
 // Javascript Document
 
 (() => {
-  
   return {
     props: ['source'],
     methods: {
@@ -25,4 +24,3 @@
     }
   }
 })();
-
