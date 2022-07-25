@@ -22,6 +22,16 @@
       }
     },
     methods: {
+      cartDetails(a){
+        this.getPopup().open({
+          title: bbn._('Cart details'),
+          scrollable: true,
+          source: a,
+          component: 'appui-shop-transaction-details',
+          height: '80%',
+          width: '90%'
+        })
+      },
       renderMoney(a){
         return bbn.fn.money(a.total, false, " €", false, ',', " ", 2);
       },
@@ -33,6 +43,17 @@
       }
     },
     components: {
+      cart: {
+        template:  '<i class="nf nf-mdi-shopping bbn-medium bbn-p" @click="parent.cartDetails(source)"></i>',
+        props: ['source'],
+        data(){
+          return {
+            parent: this.closest('bbn-container').getComponent()
+          }
+        },
+
+      },
+
       status:{
         template: '<bbn-dropdown :source="parent.status" v-model="source.status"></bbn-dropdown>',
         props: ['source'],
