@@ -18,6 +18,12 @@
         },{
           text: 'Proceeding',
           value: 'proceeding'
+        },{
+          text: 'Paid',
+          value: 'paid'
+        },{
+          text: 'Unpaid',
+          value: 'unpaid'
         }]
       }
     },
@@ -36,10 +42,13 @@
         return bbn.fn.money(a.total, false, " €", false, ',', " ", 2);
       },
       renderClientName(a){
-        return a.client.name
+        return a.client.first_name + ' ' + a.client.last_name
       },
       renderAddress(a){
-        return bbn.fn.nl2br(a.address.fulladdress) + '<br>' + a.country
+        return bbn.fn.nl2br(a.shipping_address.fulladdress) + '<br>' + bbn.fn.getField(bbn.opt.countries, 'text', 'value',a.shipping_address.country)
+      },
+      renderBillingAddress(a){
+        return bbn.fn.nl2br(a.billing_address.fulladdress) + '<br>' + bbn.fn.getField(bbn.opt.countries, 'text', 'value',a.billing_address.country)
       }
     },
     components: {
