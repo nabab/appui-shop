@@ -66,15 +66,15 @@
                  :nullable="true"
                  width="5em"
                  field="g3000"/>
-    <bbns-column title="<?= _("+ 1kg") ?>"
-                 ftitle="<?= _("Every kg added") ?>"
+    <bbns-column title="<?= _("+ 500g") ?>"
+                 ftitle="<?= _("Every 500g added") ?>"
                  :precision="2"
 								 :options="{step:0.1, decimals: 2, min: 0}"
                  type="money"
                  currency="€"
                  :nullable="true"
                  width="5em"
-                 field="gm1000"/>
+                 field="gm500"/>
     <bbns-column title="<?= _(" ") ?>"
                  width="7em"
                  :buttons="[{
@@ -88,6 +88,6 @@
                            icon: 'nf nf-fa-times',
                            action: 'delete'
                            }]"
-                 field="gm1000"/>
+                 field="gm500"/>
   </bbn-table>
 </div>
