@@ -566,13 +566,23 @@
         "delete": "RESTRICT",
         "unique": 0
       },
-      "id_address": {
+      "id_shipping_address": {
         "columns": [
-          "id_address"
+          "id_shipping_address"
         ],
         "ref_table": "bbn_shop_clients_addresses",
         "ref_column": "id",
-        "update": "CASCADE",
+        "update": "RESTRICT",
+        "delete": "RESTRICT",
+        "unique": 0
+      },
+      "id_billing_address": {
+        "columns": [
+          "id_billing_address"
+        ],
+        "ref_table": "bbn_shop_clients_addresses",
+        "ref_column": "id",
+        "update": "RESTRICT",
         "delete": "RESTRICT",
         "unique": 0
       },
@@ -597,8 +607,11 @@
       "id_client": [
         "id_client"
       ],
-      "id_address": [
-        "id_address"
+      "id_shipping_address": [
+        "id_shipping_address"
+      ],
+      "id_billing_address": [
+        "id_billing_address"
       ],
       "payment_type": [
         "payment_type"
@@ -634,7 +647,13 @@
         "type": "datetime",
         "null": 0
       },
-      "id_address": {
+      "id_shipping_address": {
+        "type": "binary",
+        "null": 0,
+        "key": "MUL",
+        "maxlength": 16
+      },
+      "id__billing_address": {
         "type": "binary",
         "null": 0,
         "key": "MUL",
