@@ -21,7 +21,7 @@
     </bbns-column>
     <bbns-column field="cart"
                  :component="$options.components.cart"
-                 title="<?=_("Cart")?>"
+                 title="<?=_("Details")?>"
                  :width="30">
     </bbns-column>
 
@@ -34,14 +34,18 @@
                  :width="100"
                  title="<?=_("Payment type")?>">
     </bbns-column>
-    <bbns-column field="address"
+    <bbns-column field="shipping_address"
                  :render="renderAddress"
                  title="<?=_("Shipping address")?>">
+    </bbns-column>
+    <bbns-column field="billing_address"
+                 :render="renderBillingAddress"
+                 title="<?=_("Billing address")?>">
     </bbns-column>
     <bbns-column field="status"
                  :width="100"
                  :component="$options.components.status"
-                title="<?=_("Status")?>">
+                 title="<?=_("Status")?>">
     </bbns-column>
     <bbns-column field="moment"
                  type="datetime"

@@ -12,6 +12,7 @@
         }
        return '<img class="transaction-product-img" src="'+src+'">'
       },
+      
       renderProvider(a){
         return a.product.provider
       },
@@ -20,6 +21,26 @@
       },
       renderTitle(a){
         return a.product.title
+      },
+      money(m){
+        return bbn.fn.money(m, false, " €", false, ',', " ", 2);
+      }
+    },
+    computed:{
+      renderCartDate(){
+        return bbn.fn.fdatetime(this.source.cart[0].date_added)
+      },
+      renderAddress(){
+        return  bbn.fn.nl2br(this.source.shipping_address.fulladdress) + '<br>' + bbn.fn.getField(bbn.opt.countries, 'text', 'value',this.source.shipping_address.country)
+      },
+      renderBillingAddress(){
+        return  bbn.fn.nl2br(this.source.billing_address.fulladdress) + '<br>' + bbn.fn.getField(bbn.opt.countries, 'text', 'value',this.source.billing_address.country)
+      },
+      renderClient(){
+        return this.source.client.first_name + ' ' + this.source.client.last_name
+      },
+      detailsTitle(){
+        return bbn._('Order received on') + ' ' + bbn.fn.fdatetime(this.source.moment)
       }
     }
   }
