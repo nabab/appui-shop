@@ -12,7 +12,7 @@
         <label class="bbn-l" v-text="source.client.email"></label>
         
         <label class="bbn-b"><?=_('Newsletter')?>:</label>
-        <bbn-checkbox class="bbn-l" :value="source.client.newsletter" :disabled="true"/>
+        <i :class="['bbn-l', {'nf nf-fa-check bbn-greeen':source.client.newsletter,'nf nf-fa-close bbn-red': !source.client.newsletter}]"/>
         
         <label class="bbn-b"><?=_('Shipping address')?>:</label>
         <label class="bbn-l" v-html="renderAddress"></label>
