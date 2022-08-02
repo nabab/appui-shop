@@ -15,6 +15,12 @@
     <bbns-column field="id"
                :hidden="true">
     </bbns-column>
+
+    <bbns-column field="number"
+                 :width="100"
+                 title="<?=_("Number")?>">
+    </bbns-column>   
+
     <bbns-column field="client.name"
                  :render="renderClientName"
                  title="<?=_("Client name")?>">
@@ -47,6 +53,7 @@
                  :component="$options.components.status"
                  title="<?=_("Status")?>">
     </bbns-column>
+
     <bbns-column field="moment"
                  type="datetime"
                  :width="150"
