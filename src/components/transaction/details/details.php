@@ -38,8 +38,6 @@
         <label class="bbn-b"><?=_('Total')?>:</label>
         <label class="bbn-l" v-text="money(source.total)"></label>
 
-        <label class="bbn-b"><?=_('Cart creation date')?>:</label>
-        <label class="bbn-l" v-text="renderCartDate"></label>
       </div>
     </bbn-pane>
     <bbn-pane>

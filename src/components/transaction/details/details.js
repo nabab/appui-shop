@@ -27,9 +27,7 @@
       }
     },
     computed:{
-      renderCartDate(){
-        return bbn.fn.fdatetime(this.source.cart[0].date_added)
-      },
+
       renderAddress(){
         return  bbn.fn.nl2br(this.source.shipping_address.fulladdress) + '<br>' + bbn.fn.getField(bbn.opt.countries, 'text', 'value',this.source.shipping_address.country)
       },
