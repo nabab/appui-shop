@@ -10,8 +10,8 @@
         <label class="bbn-b"><?=_('Transaction reference')?>:</label>
         <label class="bbn-l" v-text="source.reference"></label> 
 
-        <label class="bbn-b" v-if="source.error"><?=_('Transaction error')?>:</label>
-        <label class="bbn-l" v-if="source.error" v-text="source.error"></label> 
+        <label class="bbn-b" v-if="source.error_message"><?=_('Transaction error message')?>:</label>
+        <label class="bbn-l" v-if="source.error_message" v-text="source.error_message"></label> 
 
         <label class="bbn-b"><?=_('Client')?>:</label>
         <label class="bbn-l" v-text="renderClient"></label>
@@ -45,6 +45,9 @@
 
         <label class="bbn-b"><?=_('Total')?>:</label>
         <label class="bbn-l" v-text="money(source.total)"></label>
+
+        <label class="bbn-b"><?=_('Test')?>:</label>
+        <label class="bbn-l bbn-bordered" v-text="source.test"></label>
 
       </div>
     </bbn-pane>
