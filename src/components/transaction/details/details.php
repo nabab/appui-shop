@@ -4,7 +4,15 @@
     <bbn-pane size="50%" :scrollable="true">
       <div class="bbn-c"><h2 v-text="detailsTitle"></h2></div>
       <div class="bbn-grid-fields bbn-hlpadded">
-      
+        <label class="bbn-b"><?=_('Transaction number')?>:</label>
+        <label class="bbn-l" v-text="source.number"></label>
+
+        <label class="bbn-b"><?=_('Transaction reference')?>:</label>
+        <label class="bbn-l" v-text="source.reference"></label> 
+
+        <label class="bbn-b" v-if="source.error"><?=_('Transaction error')?>:</label>
+        <label class="bbn-l" v-if="source.error" v-text="source.error"></label> 
+
         <label class="bbn-b"><?=_('Client')?>:</label>
         <label class="bbn-l" v-text="renderClient"></label>
 
