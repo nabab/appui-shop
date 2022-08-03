@@ -636,17 +636,6 @@
         "key": "MUL",
         "maxlength": 16
       },
-      "total": {
-        "type": "decimal",
-        "null": 0,
-        "signed": 1,
-        "maxlength": 14,
-        "decimals": 2
-      },
-      "moment": {
-        "type": "datetime",
-        "null": 0
-      },
       "id_shipping_address": {
         "type": "binary",
         "null": 0,
@@ -659,12 +648,51 @@
         "key": "MUL",
         "maxlength": 16
       },
+      "total": {
+        "type": "decimal",
+        "null": 0,
+        "signed": 1,
+        "maxlength": 14,
+        "decimals": 2
+      },
+      "moment": {
+        "type": "datetime",
+        "null": 0
+      },
+      "number": {
+        "type": "varchar",
+        "null": 0,
+        "signed": 0,
+        "maxlength": 15
+      },
       "payment_type": {
         "type": "binary",
         "null": 0,
         "key": "MUL",
         "maxlength": 16
       },
+      "reference": {
+        "type": "varchar",
+        "null": 1,
+        "default": "NULL",
+        "maxlength": 50
+      },
+      "url": {
+        "type": "text",
+        "null": 1,
+        "default": "NULL"
+      },
+      "error_message": {
+        "type": "text",
+        "null": 1,
+        "default": "NULL"
+      },
+      "error_code": {
+        "type": "varchar",
+        "null": 1,
+        "default": "NULL",
+        "maxlength": 50
+    },
       "status": {
         "type": "enum",
         "null": 0,
@@ -673,9 +701,20 @@
         "values": [
           "failed",
           "success",
+          "unpaid",
+          "paid",
           "ready",
           "proceeding"
         ]
+      },
+      "test": {
+        "type": "tinyint",
+        "null": 0,
+        "extra": "",
+        "signed": 0,
+        "generation": null,
+        "default": 0,
+        "maxlength": 1
       }
     }
   }
