@@ -648,6 +648,14 @@
         "key": "MUL",
         "maxlength": 16
       },
+      "shipping_cost": {
+        "type": "decimal",
+        "null": 0,
+        "signed": 1,
+        "maxlength": 14,
+        "decimals": 2,
+        "default": 0
+      },
       "total": {
         "type": "decimal",
         "null": 0,
