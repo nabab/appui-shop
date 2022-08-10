@@ -32,7 +32,7 @@
               v-text="renderStatus"/>
         <label class="bbn-b bbn-label"><?=_('Transaction reference')?>:</label>
         <div class="bbn-background bbn-spadded"
-              v-text="source.reference"/>
+              v-html="source.reference ? source.reference : '&nbsp;'"/>
         <label class="bbn-b bbn-label"
                 v-if="source.error_message"><?=_('Transaction error message')?>:</label>
         <div v-if="source.error_message"
