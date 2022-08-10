@@ -24,7 +24,8 @@
       },
       money(m){
         return bbn.fn.money(m, false, " €", false, ',', " ", 2);
-      }
+      },
+      sum: bbn.fn.sum
     },
     computed:{
       renderPyamentType(){

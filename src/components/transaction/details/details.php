@@ -43,13 +43,13 @@
               v-text="renderPyamentType"/>
         <label class="bbn-b bbn-label"><?=_('Products quantity')?>:</label>
         <div class="bbn-background bbn-spadded"
-              v-text="source.cart[0].quantity"/>
+              v-text="source.products.length"/>
         <label class="bbn-b bbn-label"><?=_('Amount')?>:</label>
         <div class="bbn-background bbn-spadded"
-              v-text="money(source.cart[0].amount)"/>
+              v-text="money(sum(source.products, 'amount'))"/>
         <label class="bbn-b bbn-label"><?=_('Shipping cost')?>:</label>
         <div class="bbn-background bbn-spadded"
-              v-text="money(source.cart[0].shipping_cost)"/>
+              v-text="money(source.shipping_cost)"/>
         <label class="bbn-b bbn-label"><?=_('Total')?>:</label>
         <div class="bbn-background bbn-spadded"
               v-text="money(source.total)"/>
@@ -60,7 +60,7 @@
         <div class="bbn-c bbn-b bbn-padded bbn-background bbn-xl bbn-bordered-bottom"
              v-text="_('Products')"/>
         <div class="bbn-flex-fill">
-          <bbn-table :source="source.cart"
+          <bbn-table :source="source.products"
                      class="bbn-no-border">
             <bbns-column field="product"
                         :width="100"
