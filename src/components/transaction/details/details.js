@@ -2,22 +2,22 @@
 
 (() => {
   return {
-    props: ['source'],
+    props: {
+      source: {
+        type: Object,
+        required: true
+      }
+    },
     methods: {
       renderProduct(a){
-        let idx = bbn.fn.search(a.product.medias, 'id', a.product.front_img),
-          src= '';
-        if(idx > -1){
-          src = a.product.medias[idx].path
-        }
-       return '<img class="transaction-product-img" src="'+src+'">'
+        let src= bbn.fn.getField(a.product.medias, 'path', 'id', a.product.front_img);
+       return `<img class="transaction-product-img" src="${src || ''}">`;
       },
-      
       renderProvider(a){
         return a.product.provider
       },
       renderPrice(a){
-        return bbn.fn.money(a.product.price, false, '€', false, '.' ,false, 2); 
+        return bbn.fn.money(a.product.price, false, '€', false, '.' ,false, 2);
       },
       renderTitle(a){
         return a.product.title
@@ -27,7 +27,9 @@
       }
     },
     computed:{
-
+      renderPyamentType(){
+        return bbn.fn.getField(this.$root.options.paymentTypes, 'text', 'value', this.source.payment_type);
+      },
       renderAddress(){
         return  bbn.fn.nl2br(this.source.shipping_address.fulladdress) + '<br>' + bbn.fn.getField(bbn.opt.countries, 'text', 'value',this.source.shipping_address.country)
       },
@@ -38,7 +40,10 @@
         return this.source.client.first_name + ' ' + this.source.client.last_name
       },
       detailsTitle(){
-        return bbn._('Order received on') + ' ' + bbn.fn.fdatetime(this.source.moment)
+        return bbn._('Order received on %s', bbn.fn.fdatetime(this.source.moment));
+      },
+      renderStatus(){
+        return bbn.fn.getField(appui.getRegistered('appui-shop-transactions').status, 'text', 'value', this.source.status);
       }
     }
   }

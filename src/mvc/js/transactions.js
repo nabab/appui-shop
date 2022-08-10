@@ -3,35 +3,35 @@
     data(){
       return {
         root: appui.plugins['appui-shop'],
-        status:[{
+        status: bbn.fn.order([{
           text: 'All',
           value: null
-        },{
+        }, {
           text: 'Failed',
           value: 'failed'
-        },{
+        }, {
           text: 'Success',
           value: 'success'
-        },{
+        }, {
           text: 'Ready',
           value: 'ready'
-        },{
+        }, {
           text: 'Proceeding',
           value: 'proceeding'
-        },{
+        }, {
           text: 'Paid',
           value: 'paid'
-        },{
+        }, {
           text: 'Unpaid',
           value: 'unpaid'
-        }]
+        }], 'text')
       }
     },
     methods: {
       cartDetails(a){
         this.getPopup().open({
-          title: bbn._('Cart details'),
-          scrollable: true,
+          title: bbn._('Order details'),
+          scrollable: false,
           source: a,
           component: 'appui-shop-transaction-details',
           height: '80%',
@@ -51,18 +51,10 @@
         return bbn.fn.nl2br(a.billing_address.fulladdress) + '<br>' + bbn.fn.getField(bbn.opt.countries, 'text', 'value',a.billing_address.country)
       }
     },
+    created(){
+      appui.register('appui-shop-transactions', this);
+    },
     components: {
-      cart: {
-        template:  '<i class="nf nf-mdi-shopping bbn-medium bbn-p" @click="parent.cartDetails(source)"></i>',
-        props: ['source'],
-        data(){
-          return {
-            parent: this.closest('bbn-container').getComponent()
-          }
-        },
-
-      },
-
       status:{
         template: '<bbn-dropdown :source="parent.status" v-model="source.status"></bbn-dropdown>',
         props: ['source'],
@@ -89,7 +81,6 @@
             }
           }
         },
-        
       },
       toolbar: {
         template:  `
