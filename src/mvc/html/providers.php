@@ -11,10 +11,10 @@
              storage-full-name="appui-shop-admin-providers"
              editor="appui-shop-provider-form"
              :toolbar="[{
-              text: '<?=_('New provider')?>',
-              icon: 'nf nf-fa-plus',
-              action: 'insert'
-            }]">
+               text: '<?=_('New provider')?>',
+               icon: 'nf nf-fa-plus',
+               action: 'insert'
+             }]">
     <bbns-column field="id"
                :hidden="true">
     </bbns-column>

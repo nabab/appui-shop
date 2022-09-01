@@ -2,6 +2,7 @@
   <bbn-table :sortable="true"
              :scrollable="false"
              :editable="true"
+             :auto-save="true"
              currency="&euro;"
              :toolbar="[{
                        text: _('New territory'),
@@ -65,7 +66,8 @@
                  currency="€"
                  :nullable="true"
                  width="5em"
-                 field="g3000"/>
+                 field="g3000"
+                 :novalue="colNoValue"/>
     <bbns-column title="<?= _("+ 500g") ?>"
                  ftitle="<?= _("Every 500g added") ?>"
                  :precision="2"
@@ -75,19 +77,17 @@
                  :nullable="true"
                  width="5em"
                  field="gm500"/>
-    <bbns-column title="<?= _(" ") ?>"
-                 width="7em"
+    <bbns-column width="7em"
                  :buttons="[{
-                           text: _('Modify'),
-                           notext: true,
-                           icon: 'nf nf-fa-edit',
-                           action: 'edit'
-                           }, {
-                           text: _('Remove'),
-                           notext: true,
-                           icon: 'nf nf-fa-times',
-                           action: 'delete'
-                           }]"
-                 field="gm500"/>
+                   text: _('Modify'),
+                   notext: true,
+                   icon: 'nf nf-fa-edit',
+                   action: 'edit'
+                 }, {
+                   text: _('Remove'),
+                   notext: true,
+                   icon: 'nf nf-fa-times',
+                   action: 'delete'
+                 }]"/>
   </bbn-table>
 </div>
