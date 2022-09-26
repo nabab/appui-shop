@@ -642,7 +642,7 @@
         "key": "MUL",
         "maxlength": 16
       },
-      "id__billing_address": {
+      "id_billing_address": {
         "type": "binary",
         "null": 0,
         "key": "MUL",
