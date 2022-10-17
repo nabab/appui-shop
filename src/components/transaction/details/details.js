@@ -39,7 +39,7 @@
       renderBillingAddress(){
         return  bbn.fn.nl2br(this.source.billing_address.fulladdress) +
           '<br>' + bbn.fn.getField(bbn.opt.countries, 'text', 'value',this.source.billing_address.country) +
-          (!!this.source.billing_address.phone && this.source.billing_address.phone.length ? '<br>' + this.source.billing_address.phone : '')
+          (!!this.source.billing_address.phone ? '<br>' + this.source.billing_address.phone : '')
       },
       renderClient(){
         return this.source.client.first_name + ' ' + this.source.client.last_name
