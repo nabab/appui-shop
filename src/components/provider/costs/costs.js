@@ -19,6 +19,9 @@
           ',',
           ' ',
           cfg.precision === -4 ? 3 : (cfg.precision || cfg.decimals || 0));
+      },
+      renderDisabled(row){
+        return !!row.disabled ? '<i class="nf nf-fa-check"/>' : '';
       }
     }
   };

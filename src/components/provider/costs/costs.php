@@ -13,6 +13,14 @@
                  ftitle="<?= _("Continent or country") ?>"
                  field="territory"
                  :source="destinations"/>
+    <bbns-column title="<?=_('Disabled')?>"
+                 ftitle="<?=_('Disable shipments to this territory')?>"
+                 field="disabled"
+                 type="boolean"
+                 :default="0"
+                 :render="renderDisabled"
+                 cls="bbn-c"
+                 width="6em"/>
     <bbns-column title="<?= _("< 500g") ?>"
                  ftitle="<?= _("Under 500g") ?>"
                  type="money"
