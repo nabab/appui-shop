@@ -60,13 +60,16 @@ if ($model->hasData('action', true)) {
     case 'deactivate':
       $data = $product->get($model->data['id']);
       $data['active'] = 0;
-      die(var_dump( $product->edit($data)));
       $res['success'] = $product->edit($data);
+      break;
+
 
     case 'activate':
       $data = $product->get($model->data['id']);
       $data['active'] = 1;
       $res['success'] = $product->edit($data);
+      break;
+
       
   }
 

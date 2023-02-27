@@ -46,8 +46,7 @@
         appui.confirm(bbn._('Are you sure to activate this variant?'), () => {
           bbn.fn.post(this.root + 'actions/product/activate',{id: this.source.id}, d =>{
             if (d.success) { 
-              this.source.active = 1;
-             
+              this.$set(this.source, 'active', 1);
             }
             else{
               appui.error(bbn._('Error while activating'));
@@ -59,8 +58,7 @@
         appui.confirm(bbn._('Are you sure to deactivate this variant? (This variant cannot be deleted because it is currently added to a cart)'), () => {
           bbn.fn.post(this.root + 'actions/product/deactivate',{id: this.source.id}, d =>{
             if (d.success) { 
-              this.source.active = 0;
-             
+              this.$set(this.source, 'active', 0);
             }
             else{
               appui.error(bbn._('Error while deactivating'));
