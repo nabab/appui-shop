@@ -42,6 +42,32 @@
       }
     },
     methods: {
+      activateVariant(row){
+        appui.confirm(bbn._('Are you sure to activate this variant?'), () => {
+          bbn.fn.post(this.root + 'actions/product/activate',{id: this.source.id}, d =>{
+            if (d.success) { 
+              this.source.active = 1;
+             
+            }
+            else{
+              appui.error(bbn._('Error while activating'));
+            }
+          });
+        });
+      },
+      deactivateVariant(row){
+        appui.confirm(bbn._('Are you sure to deactivate this variant? (This variant cannot be deleted because it is currently added to a cart)'), () => {
+          bbn.fn.post(this.root + 'actions/product/deactivate',{id: this.source.id}, d =>{
+            if (d.success) { 
+              this.source.active = 0;
+             
+            }
+            else{
+              appui.error(bbn._('Error while deactivating'));
+            }
+          });
+        });
+      },
       deleteVariant(row) {
         appui.confirm(bbn._('Are you sure to delete this variant?'), () => {
           bbn.fn.post(this.root + 'actions/product/delete',{id: this.source.id}, d =>{

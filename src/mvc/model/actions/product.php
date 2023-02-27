@@ -56,6 +56,18 @@ if ($model->hasData('action', true)) {
     case 'delete':
       $res['success'] = $product->delete($model->data['id']);
       break;
+
+    case 'deactivate':
+      $data = $product->get($model->data['id']);
+      $data['active'] = 0;
+      die(var_dump( $product->edit($data)));
+      $res['success'] = $product->edit($data);
+
+    case 'activate':
+      $data = $product->get($model->data['id']);
+      $data['active'] = 1;
+      $res['success'] = $product->edit($data);
+      
   }
 
 	return $res;
