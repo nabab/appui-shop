@@ -31,12 +31,24 @@
                         :notext="true"
                         class="bbn-right-xspace"
                         icon="nf nf-oct-graph"/>
-            <bbn-button v-if="source.id_main"
+            <bbn-button v-if="source.id_main && !source.cart_number"
                         text="<?= _("Delete variant") ?>"
                         :notext="true"
                         @click="deleteVariant"
                         class="bbn-right-space"
                         icon="nf nf-fa-trash_o"/>
+            <bbn-button v-if="source.id_main && source.cart_number && source.active"
+                        text="<?= _("Deactivate variant") ?>"
+                        :notext="true"
+                        @click="deactivateVariant"
+                        class="bbn-right-space"
+                        icon="nf nf-cod-stop_circle"/>
+            <bbn-button v-if="source.id_main && source.cart_number && !source.active"
+                        text="<?= _("Activate variant") ?>"
+                        :notext="true"
+                        @click="activateVariant"
+                        class="bbn-right-space"
+                        icon="nf nf-cod-play_circle"/>
             <bbn-context :source="[]"
                          class="bbn-left-sspace">
               <i class="nf nf-mdi-dots_horizontal bbn-lg bbn-p"/>
