@@ -2,6 +2,7 @@
 
 (() => {
   return {
+    mixins: [bbn.vue.basicComponent],
     data(){
       let cp = appui.getRegistered('products');
       return {
