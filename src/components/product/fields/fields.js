@@ -20,15 +20,6 @@
       };
     },
     methods: {
-      emitClearCache() {
-        this.$emit('clear');
-      },
-      close() {
-        this.$emit('close');
-      },
-      save() {
-        this.$emit('save');
-      },
       addVariant() {
         this.variants.push(bbn.fn.clone(this.source));
       },
