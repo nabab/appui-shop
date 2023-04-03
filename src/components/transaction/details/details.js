@@ -34,7 +34,7 @@
       renderAddress(){
         return  bbn.fn.nl2br(this.source.shipping_address.fulladdress) +
           '<br>' + bbn.fn.getField(bbn.opt.countries, 'text', 'value',this.source.shipping_address.country) +
-          (!!this.source.shipping_address.phone && this.source.shipping_address.phone.length ? '<br>' + this.source.shipping_address.phone : '')
+          (!!this.source.shipping_address.phone ? '<br>' + this.source.shipping_address.phone : '')
       },
       renderBillingAddress(){
         return  bbn.fn.nl2br(this.source.billing_address.fulladdress) +
