@@ -4,9 +4,6 @@
       return {
         root: appui.plugins['appui-shop'],
         status: bbn.fn.order([{
-          text: 'All',
-          value: null
-        }, {
           text: 'Failed',
           value: 'failed'
         }, {
@@ -83,50 +80,61 @@
         },
       },
       toolbar: {
-        template:  `
-        <bbn-toolbar class="bbn-padded bbn-w-100">
-          <div class="bbn-r">
-            <label >Filter status</label>
-            <bbn-dropdown :source="parent.status" v-model="filterStatus" :nullable="true"></bbn-dropdown>
+        template: `
+        <div class="bbn-spadded bbn-vmiddle bbn-header">
+          <div class="bbn-flex-fill bbn-right-sspace">
+            <bbn-button text="` + bbn._('Export excel') + `"
+                        icon="nf nf-md-microsoft_excel"
+                        @click="exportExcel"/>
           </div>
-        </bbn-toolbar>`,
+          <div>
+            <label>` + bbn._('Filter status') + `</label>
+            <bbn-dropdown :source="parent.status"
+                          v-model="filterStatus"
+                          :nullable="true"/>
+          </div>
+        </div>`,
         props: ['source'],
         data(){
           return {
             filterStatus: null,
-            parent: this.closest('bbn-container').getComponent()
+            parent: {},
+            table: {}
           }
         },
         methods:{
           filterTable(){
-            let table = this.closest('bbn-table'),
-            idx = bbn.fn.search(table.currentFilters.conditions, 'field', 'status');
-            if ( idx > -1 ){
-              if(this.filterStatus){
-                table.$set(table.currentFilters.conditions[idx], 'value', this.filterStatus);
+            let idx = bbn.fn.search(this.table.currentFilters.conditions, 'field', 'status');
+            if (idx > -1) {
+              if (this.filterStatus) {
+                this.table.$set(this.table.currentFilters.conditions[idx], 'value', this.filterStatus);
               }
-              else{
-                table.currentFilters.conditions.splice(idx,1)
+              else {
+                this.table.currentFilters.conditions.splice(idx, 1)
               }
             }
             else {
-              table.currentFilters.conditions.push({
+              this.table.currentFilters.conditions.push({
                 field: 'status',
                 value: this.filterStatus
               });
             }
+          },
+          exportExcel(){
+            this.table.exportExcel();
           }
         },
         watch:{
-          filterStatus(val){
-            this.filterTable()
+          filterStatus(){
+            this.filterTable();
           }
         },
         mounted(){
-          let table = this.closest('bbn-table'),
-            idx = bbn.fn.search(table.currentFilters.conditions, 'field', 'status');
-            if ( idx > -1 ){
-              this.filterStatus = table.currentFilters.conditions[idx].value
+          this.$set(this, 'parent', this.closest('bbn-container').getComponent());
+          this.$set(this, 'table', this.closest('bbn-table'));
+          let idx = bbn.fn.search(this.table.currentFilters.conditions, 'field', 'status');
+            if (idx > -1) {
+              this.filterStatus = this.table.currentFilters.conditions[idx].value
             }
         }
       }
