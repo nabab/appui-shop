@@ -21,6 +21,10 @@
     <bbns-column field="name"
                  title="<?=_("Name")?>">
     </bbns-column>
+    <bbns-column title="<?=_("Emails")?>"
+                 field="emails"
+                 :component="$options.components.providerEmails">
+    </bbns-column>
     <bbns-column field="cfg"
                  :default="[]"
                  :hidden="true">

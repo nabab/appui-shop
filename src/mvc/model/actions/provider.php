@@ -13,6 +13,9 @@ if ($model->hasData('action', true)) {
 	switch ($action) {
     case 'insert':
       if ($id_pr = $provider->add($model->data['name'], $model->data['cfg'])) {
+        if (!empty($model->data['email'])) {
+          $provider->addProviderEmail($id_pr, $model->data['email']);
+        }
         $new_pr = $provider->get($id_pr);
         return [
           'success' => true,
@@ -40,6 +43,23 @@ if ($model->hasData('action', true)) {
         ];
       }
       break;
+
+    case  'deleteEmail':
+      if ($model->hasData('id', true) && $model->hasData('email', true) && $provider->deleteProviderEmail($model->data['id'], $model->data['email'])) {
+        return [
+          'success' => true,
+        ];
+      }
+      break;
+
+      case  'addEmail':
+        if ($model->hasData('id', true) && $model->hasData('email', true) && $provider->addProviderEmail($model->data['id'], $model->data['email'])) {
+          return [
+            'success' => true,
+          ];
+        }
+        break;
+
   }
 
   return ['success' => false];
