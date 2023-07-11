@@ -14,7 +14,7 @@
         <bbn-input v-model="source.row.name"
                    required="required"
                    :required="true"/>
-      </div>           
+      </div>
     </div>
     <div class="bbn-w-100">
       <appui-shop-provider-costs :source="source.row.cfg"/>
