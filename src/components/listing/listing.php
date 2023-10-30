@@ -12,5 +12,6 @@
                        :insert-url="root + 'actions/product/insert'"
                        :delete-url="root + 'actions/product/delete'"
                        :editor-url="root + 'products/product/'"
-                       insert-component="appui-shop-product-form"/>
+                       insert-component="appui-shop-product-form"
+                       :toolbar-types="false"/>
 </div>
