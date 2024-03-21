@@ -11,13 +11,13 @@
                  }">
   <div class="bbn-grid-fields bbn-lpadded">
     <label class="bbn-b">
-      <?=_('Title')?>
+      <?= _('Title') ?>
     </label>
     <bbn-input v-model="formData.title"
                :required="true"/>
 
     <label class="bbn-b">
-      <?=_('Web URL')?>
+      <?= _('Web URL') ?>
     </label>
     <appui-note-field-url :source="formData"
                           class="bbn-wider"
@@ -25,14 +25,14 @@
                           v-model="formData.url"/>
 
     <label class="bbn-b">
-      <?=_('Provider')?>
+      <?= _('Provider') ?>
     </label>
     <bbn-dropdown v-model="formData.id_provider"
                   :required="true"
                   :source="providers"/>
 
     <label class="bbn-b">
-      <?=_('Type')?>
+      <?= _('Type') ?>
     </label>
     <bbn-dropdown v-model="formData.product_type"
                   :required="true"
@@ -46,7 +46,7 @@
                   :source="editions"/>
 
     <label class="bbn-b">
-      <?=_('Purchase price')?>
+      <?= _('Purchase price') ?>
     </label>
     <bbn-numeric v-model="formData.price_purchase"
                  :nullable="true"
@@ -55,7 +55,7 @@
                  :decimals="2"/>
 
     <label class="bbn-b">
-      <?=_('Selling price')?>
+      <?= _('Selling price') ?>
     </label>
     <bbn-numeric v-model="formData.price"
                  :nullable="true"
@@ -64,12 +64,12 @@
                  :decimals="2"/>
 
     <label class="bbn-b">
-      <?=_('Dimensions (H*w in mm)')?>
+      <?= _('Dimensions (H*w in mm)') ?>
     </label>
     <bbn-input v-model="formData.dimensions"/>
 
     <label class="bbn-b">
-      <?=_('Weight in grams')?>
+      <?= _('Weight in grams') ?>
     </label>
     <bbn-numeric v-model="formData.weight"
                  :nullable="true"
@@ -77,7 +77,7 @@
                  :min="0"/>
 
     <label class="bbn-b">
-      <?=_('Stock')?>
+      <?= _('Stock') ?>
     </label>
     <bbn-numeric v-model="formData.stock"
                  :required="true"/>

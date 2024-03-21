@@ -9,7 +9,7 @@
     <div class="bbn-w-100">
       <div class="bbn-grid-fields bbn-lpadded">
         <label class="bbn-b">
-          <?=_ ('Name') ?>
+          <?= _ ('Name')  ?>
         </label>
         <bbn-input v-model="source.row.name"
                    required="required"

@@ -342,7 +342,7 @@
                   :text="_('Create new product')"
                   :action="insert"/>
       <div class="bbn-xl bbn-b bbn-flex-fill bbn-r bbn-white">
-        <?=_("The Content Management System")?>
+        <?= _("The Content Management System") ?>
       </div>
     </div>
   </bbn-toolbar>`,

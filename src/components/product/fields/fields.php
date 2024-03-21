@@ -16,7 +16,7 @@
                 style="height: 10em; max-height: 20vh"/>
 
   <label style="margin-top:10px">
-    <?=_('Front Image')?>
+    <?= _('Front Image') ?>
   </label>
   <div>
     <appui-note-media-field v-model="source.id_media"
@@ -24,25 +24,25 @@
   </div>
 
   <label>
-    <?=_('Stock')?>
+    <?= _('Stock') ?>
   </label>
   <bbn-numeric v-model="source.stock"/>
 
   <label>
-    <?=_('Active')?>
+    <?= _('Active') ?>
   </label>
   <bbn-switch v-model="source.active"
               :novalue="false"/>
 
   <label>
-    <?=_('Provider')?>
+    <?= _('Provider') ?>
   </label>
   <bbn-dropdown v-model="source.id_provider"
                 :required="true"
                 :source="providers"/>
 
   <label>
-    <?=_('Type')?>
+    <?= _('Type') ?>
   </label>
   <bbn-dropdown v-model="source.product_type"
                 :required="true"
@@ -56,24 +56,24 @@
                 :source="editions"/>
 
   <label>
-    <?=_('Purchase price')?>
+    <?= _('Purchase price') ?>
   </label>
   <bbn-numeric v-model="source.price_purchase"
                :decimals="2"/>
 
   <label>
-    <?=_('Selling price')?>
+    <?= _('Selling price') ?>
   </label>
   <bbn-numeric v-model="source.price"
                :decimals="2"/>
 
   <label>
-    <?=_('Dimensions (H*w in mm)')?>
+    <?= _('Dimensions (H*w in mm)') ?>
   </label>
   <bbn-input v-model="source.dimensions"/>
 
   <label>
-    <?=_('Weight in grams')?>
+    <?= _('Weight in grams') ?>
   </label>
   <bbn-numeric v-model="source.weight"
                :step="100"

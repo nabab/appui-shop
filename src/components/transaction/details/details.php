@@ -12,45 +12,45 @@
               v-text="_('Test mode')"/>
       </div>
       <div class="bbn-grid-fields bbn-lpadded">
-        <label class="bbn-b bbn-label"><?=_('Order number')?>:</label>
+        <label class="bbn-b bbn-label"><?= _('Order number') ?>:</label>
         <div class="bbn-background bbn-spadded"
               v-text="source.number"/>
-        <label class="bbn-b bbn-label"><?=_('Client')?>:</label>
+        <label class="bbn-b bbn-label"><?= _('Client') ?>:</label>
         <div class="bbn-background bbn-spadded"
               v-text="renderClient"/>
-        <label class="bbn-b bbn-label"><?=_('Email')?>:</label>
+        <label class="bbn-b bbn-label"><?= _('Email') ?>:</label>
         <div class="bbn-background bbn-spadded"
               v-text="source.client.email"/>
-        <label class="bbn-b bbn-label"><?=_('Shipping address')?>:</label>
+        <label class="bbn-b bbn-label"><?= _('Shipping address') ?>:</label>
         <div class="bbn-background bbn-spadded"
               v-html="renderAddress"/>
-        <label class="bbn-b bbn-label"><?=_('Billing address')?>:</label>
+        <label class="bbn-b bbn-label"><?= _('Billing address') ?>:</label>
         <div class="bbn-background bbn-spadded"
               v-html="renderBillingAddress"/>
-        <label class="bbn-b bbn-label"><?=_('Order status')?>:</label>
+        <label class="bbn-b bbn-label"><?= _('Order status') ?>:</label>
         <div class="bbn-background bbn-spadded"
               v-text="renderStatus"/>
-        <label class="bbn-b bbn-label"><?=_('Transaction reference')?>:</label>
+        <label class="bbn-b bbn-label"><?= _('Transaction reference') ?>:</label>
         <div class="bbn-background bbn-spadded"
               v-html="source.reference ? source.reference : '&nbsp;'"/>
         <label class="bbn-b bbn-label"
-                v-if="source.error_message"><?=_('Transaction error message')?>:</label>
+                v-if="source.error_message"><?= _('Transaction error message') ?>:</label>
         <div v-if="source.error_message"
               class="bbn-background bbn-spadded"
               v-text="source.error_message"/>
-        <label class="bbn-b bbn-label"><?=_('Payment type')?>:</label>
+        <label class="bbn-b bbn-label"><?= _('Payment type') ?>:</label>
         <div class="bbn-background bbn-spadded"
               v-text="renderPyamentType"/>
-        <label class="bbn-b bbn-label"><?=_('Products quantity')?>:</label>
+        <label class="bbn-b bbn-label"><?= _('Products quantity') ?>:</label>
         <div class="bbn-background bbn-spadded"
               v-text="source.products.length"/>
-        <label class="bbn-b bbn-label"><?=_('Amount')?>:</label>
+        <label class="bbn-b bbn-label"><?= _('Amount') ?>:</label>
         <div class="bbn-background bbn-spadded"
               v-text="money(sum(source.products, 'amount'))"/>
-        <label class="bbn-b bbn-label"><?=_('Shipping cost')?>:</label>
+        <label class="bbn-b bbn-label"><?= _('Shipping cost') ?>:</label>
         <div class="bbn-background bbn-spadded"
               v-text="money(source.shipping_cost)"/>
-        <label class="bbn-b bbn-label"><?=_('Total')?>:</label>
+        <label class="bbn-b bbn-label"><?= _('Total') ?>:</label>
         <div class="bbn-background bbn-spadded"
               v-text="money(source.total)"/>
       </div>
@@ -64,23 +64,23 @@
                      class="bbn-no-border">
             <bbns-column field="product"
                         :width="100"
-                        title="<?=_("Title")?>"
+                        title="<?= _("Title") ?>"
                         :render="renderTitle"/>
             <bbns-column field="product"
                         :render="renderProduct"
-                        title="<?=_("Product")?>"
+                        title="<?= _("Product") ?>"
                         :width="150"/>
             <bbns-column field="quantity"
                         :width="50"
-                        title="<?=_("Qty")?>"/>
+                        title="<?= _("Qty") ?>"/>
             <bbns-column field="product.price"
                         :width="50"
-                        title="<?=_("Price")?>"
+                        title="<?= _("Price") ?>"
                         :render="renderPrice"/>
             <bbns-column field="product"
                         :width="100"
                         :render="renderProvider"
-                        title="<?=_("Provider")?>"/>
+                        title="<?= _("Provider") ?>"/>
           </bbn-table>
         </div>
       </div>

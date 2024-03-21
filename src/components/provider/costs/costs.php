@@ -13,8 +13,8 @@
                  ftitle="<?= _("Continent or country") ?>"
                  field="territory"
                  :source="destinations"/>
-    <bbns-column title="<?=_('Disabled')?>"
-                 ftitle="<?=_('Disable shipments to this territory')?>"
+    <bbns-column title="<?= _('Disabled') ?>"
+                 ftitle="<?= _('Disable shipments to this territory') ?>"
                  field="disabled"
                  type="boolean"
                  :default="0"

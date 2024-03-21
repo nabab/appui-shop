@@ -11,7 +11,7 @@
              storage-full-name="appui-shop-admin-providers"
              editor="appui-shop-provider-form"
              :toolbar="[{
-               text: '<?=_('New provider')?>',
+               text: '<?= _('New provider') ?>',
                icon: 'nf nf-fa-plus',
                action: 'insert'
              }]">
@@ -19,9 +19,9 @@
                :hidden="true">
     </bbns-column>
     <bbns-column field="name"
-                 title="<?=_("Name")?>">
+                 title="<?= _("Name") ?>">
     </bbns-column>
-    <bbns-column title="<?=_("Emails")?>"
+    <bbns-column title="<?= _("Emails") ?>"
                  field="emails"
                  :component="$options.components.providerEmails">
     </bbns-column>
@@ -30,15 +30,15 @@
                  :hidden="true">
     </bbns-column>
     <bbns-column :width="220"
-                  title="<?=_("Actions")?>"
+                  title="<?= _("Actions") ?>"
                   cls="bbn-c"
                   :buttons="[{
                     icon: 'nf nf-fa-edit',
-                    title: '<?=_('Edit Provider')?>',
+                    title: '<?= _('Edit Provider') ?>',
                     action: 'edit'
                   }, {
                     icon: 'nf nf-mdi-delete',
-                    title: '<?=_('Delete Provider')?>',
+                    title: '<?= _('Delete Provider') ?>',
                     action: deleteProvider
                   }]">
     </bbns-column>
