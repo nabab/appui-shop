@@ -11,7 +11,7 @@
       let cp = appui.getRegistered('products');
       return {
         variants: this.source.variants || [],
-        users: appui.app.users,
+        users: appui.users,
         providers: cp.source.providers,
         tags: cp.source.tags,
         types_notes: this.closest('bbn-container').closest('bbn-container').getComponent().source.types,

@@ -8,7 +8,7 @@
       users: {
         type: Array,
         default(){
-          return appui.app.users;
+          return appui.users;
         }
       },
       types: {

@@ -7,7 +7,7 @@
       return {
         root: appui.plugins['appui-shop'] + '/',
         variants: this.source.variants || [],
-        users: appui.app.users,
+        users: appui.users,
         providers: cp.source.providers,
         tags: cp.source.tags,
         types: appui.options.product_types,
