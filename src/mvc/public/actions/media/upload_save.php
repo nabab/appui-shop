@@ -1,7 +1,7 @@
 <?php
 /** @var $ctrl \bbn\Mvc\Controller */
-if ( isset($ctrl->files['fichier']) ){
-  $ctrl->files['file'] = $ctrl->files['fichier'];
+if ( isset($ctrl->files['uploaded']) ){
+  $ctrl->files['file'] = $ctrl->files['uploaded'];
 }
 elseif ( isset($ctrl->files['attachments']) ){
   $ctrl->files['file'] = $ctrl->files['attachments'];
@@ -19,7 +19,7 @@ if (
   if ( \bbn\File\Dir::createPath($path) &&
     rename($f['tmp_name'], $path.'/'.$new) ){
     $ctrl->obj->success = 1;
-    $ctrl->obj->fichier = [
+    $ctrl->obj->uploaded = [
       'name' => $new,
       'size' => filesize($path.'/'.$new),
       'extension' => '.'.\bbn\Str::fileExt($new)
