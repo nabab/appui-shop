@@ -6,7 +6,7 @@
 use bbn\X;
 use bbn\Appui\Cms;
 use bbn\Appui\Medias;
-/** @var $model \bbn\Mvc\Model */
+/** @var bbn\Mvc\Model $model */
 
 if ($model->hasData('id', true)) {
   $shop = new bbn\Shop($model->db);

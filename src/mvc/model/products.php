@@ -4,7 +4,7 @@
  *
  **/
 
-/** @var $model \bbn\Mvc\Model*/
+/** @var bbn\Mvc\Model $model */
 $tags  =  new bbn\Appui\Tag($model->db, BBN_LANG);
 $opt   =& $model->inc->options;
 $shop = new bbn\Shop($model->db);

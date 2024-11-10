@@ -6,7 +6,7 @@
 use bbn\X;
 use bbn\Appui\Cms;
 use bbn\Appui\Medias;
-/** @var $model \bbn\Mvc\Model */
+/** @var bbn\Mvc\Model $model */
 
 if ($model->hasData('id', true)) {
   $prod = $model->db->rselect('bbn_shop_products', [], ['id_note' => $model->data['id']]);

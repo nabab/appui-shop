@@ -10,7 +10,7 @@ use bbn\Shop\Product;
  **/
 
 
-/** @var $model \bbn\Mvc\Model*/
+/** @var bbn\Mvc\Model $model */
 
 if ($model->hasData('action', true)) {
   $res = ['success' => false];

@@ -2,7 +2,7 @@
 
 use bbn\Appui\Search;
 
-/** @var $ctrl \bbn\Mvc\Controller */
+/** @var bbn\Mvc\Controller $ctrl */
 
 $id_type = $model->inc->options->fromCode('products', 'types', 'appui-note', 'plugins', 'shop', 'appui');
 $url = $model->pluginUrl('appui-shop');

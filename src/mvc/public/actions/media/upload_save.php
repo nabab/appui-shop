@@ -1,5 +1,5 @@
 <?php
-/** @var $ctrl \bbn\Mvc\Controller */
+/** @var bbn\Mvc\Controller $ctrl */
 if ( isset($ctrl->files['uploaded']) ){
   $ctrl->files['file'] = $ctrl->files['uploaded'];
 }

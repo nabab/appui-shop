@@ -1,6 +1,6 @@
 <?php
 
-/** @var $ctrl \bbn\Mvc\Controller */
+/** @var bbn\Mvc\Controller $ctrl */
 
 $ctrl->setColor('#FF6B17', '#FFFFFF')
   ->setIcon('nf nf-fae-book_open_o')
