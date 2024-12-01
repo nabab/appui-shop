@@ -9,7 +9,7 @@
                  id: formData.id ? formData.id : null,
                  id_note: formData.id_note ? formData.id_note : null
                  }">
-  <div class="bbn-grid-fields bbn-lpadded">
+  <div class="bbn-grid-fields bbn-lpadding">
     <label class="bbn-b">
       <?= _('Title') ?>
     </label>

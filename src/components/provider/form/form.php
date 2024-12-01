@@ -7,7 +7,7 @@
             :prefilled="true"
             :scrollable="false">
     <div class="bbn-w-100">
-      <div class="bbn-grid-fields bbn-lpadded">
+      <div class="bbn-grid-fields bbn-lpadding">
         <label class="bbn-b">
           <?= _ ('Name')  ?>
         </label>

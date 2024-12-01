@@ -336,7 +336,7 @@
       },
       toolbar: {
         template: `
-  <bbn-toolbar class="bbn-header bbn-hspadded bbn-h-100 bg-colored">
+  <bbn-toolbar class="bbn-header bbn-hspadding bbn-h-100 bg-colored">
     <div class="bbn-flex-width">
       <bbn-button icon="nf nf-fa-plus"
                   :text="_('Create new product')"

@@ -81,7 +81,7 @@
       },
       toolbar: {
         template: `
-        <div class="bbn-spadded bbn-vmiddle bbn-header">
+        <div class="bbn-spadding bbn-vmiddle bbn-header">
           <div class="bbn-flex-fill bbn-right-sspace">
             <bbn-button text="` + bbn._('Export excel') + `"
                         icon="nf nf-md-microsoft_excel"

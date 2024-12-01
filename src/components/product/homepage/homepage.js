@@ -27,7 +27,7 @@
 <bbn-form :action="root + 'actions/product/insert'"
           :source="source"
           @success="success">
-  <div class="bbn-grid-fields bbn-padded">
+  <div class="bbn-grid-fields bbn-padding">
     <label v-text="_('Title')"/>
     <bbn-input v-model="source.title"
                :required="true"

@@ -50,11 +50,11 @@
       providerEmails: {
         template: `
 <div>
-  <div v-for="email in emails" class="bbn-w-100 bbn-vspadded">
+  <div v-for="email in emails" class="bbn-w-100 bbn-vspadding">
       <span v-text="email"></span>
       <i class="bbn-red nf nf-fa-trash bbn-p" @click="deleteEmail(email)" :title="_('Delete email address')"></i>
   </div>
-  <div class="bbn-w-100 bbn-vspadded">
+  <div class="bbn-w-100 bbn-vspadding">
     <i class="bbn-green nf nf-fa-plus bbn-p bbn-xsmall" @click="addingEmail = true" :title="_('Add email address')"></i>
     <bbn-input v-model="newEmail" v-if="addingEmail" type="email" @keydown.enter="addEmail(newEmail)"/>
     <i class="bbn-green nf nf-fa-check bbn-p" @click="addEmail(newEmail)" v-if="isEmail(newEmail)" :title="_('Add email address')"></i>
