@@ -16,7 +16,7 @@
                dir: 'desc'
              }]">
     <bbns-column field="id"
-                 :hidden="true"/>
+                 :invisible="true"/>
     <bbns-column field="moment"
                  type="datetime"
                  :width="150"

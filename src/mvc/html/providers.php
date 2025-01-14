@@ -16,7 +16,7 @@
                action: 'insert'
              }]">
     <bbns-column field="id"
-               :hidden="true">
+               :invisible="true">
     </bbns-column>
     <bbns-column field="name"
                  label="<?= _("Name") ?>">
@@ -27,7 +27,7 @@
     </bbns-column>
     <bbns-column field="cfg"
                  :default="[]"
-                 :hidden="true">
+                 :invisible="true">
     </bbns-column>
     <bbns-column :width="220"
                   label="<?= _("Actions") ?>"
