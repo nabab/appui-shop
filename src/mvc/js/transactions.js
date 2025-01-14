@@ -26,8 +26,8 @@
     },
     methods: {
       cartDetails(a){
-        this.getPopup().open({
-          title: bbn._('Order details'),
+        this.getPopup({
+          label: bbn._('Order details'),
           scrollable: false,
           source: a,
           component: 'appui-shop-transaction-details',
@@ -83,7 +83,7 @@
         template: `
         <div class="bbn-spadding bbn-vmiddle bbn-header">
           <div class="bbn-flex-fill bbn-right-sspace">
-            <bbn-button text="` + bbn._('Export excel') + `"
+            <bbn-button label="` + bbn._('Export excel') + `"
                         icon="nf nf-md-microsoft_excel"
                         @click="exportExcel"/>
           </div>

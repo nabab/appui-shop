@@ -24,12 +24,12 @@
         this.variants.push(bbn.fn.clone(this.source));
       },
       openGallery(){
-        this.getPopup().open({
+        this.getPopup({
           component: this.$options.components.gallery,
           componentOptions: {
             onSelection: this.onSelection
           },
-          title: bbn._('Select an image'),
+          label: bbn._('Select an image'),
           width: '90%',
           height: '90%'
         });

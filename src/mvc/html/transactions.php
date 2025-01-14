@@ -20,37 +20,37 @@
     <bbns-column field="moment"
                  type="datetime"
                  :width="150"
-                 title="<?= _("Date") ?>"/>
+                 label="<?= _("Date") ?>"/>
     <bbns-column field="number"
                  :width="140"
-                 title="<?= _("Number") ?>"/>
+                 label="<?= _("Number") ?>"/>
     <bbns-column field="client.name"
                  :render="renderClientName"
-                 title="<?= _("Client name") ?>"
+                 label="<?= _("Client name") ?>"
                  :filterable="false"/>
     <bbns-column field="total"
                  :width="100"
                  :render="renderMoney"
-                 title="<?= _("Total") ?>"
+                 label="<?= _("Total") ?>"
                  cls="bbn-r"/>
     <bbns-column field="payment_type"
                  :width="100"
-                 title="<?= _("Payment type") ?>"
+                 label="<?= _("Payment type") ?>"
                  :source="$root.options.paymentTypes"/>
     <bbns-column field="shipping_address"
                  :render="renderAddress"
-                 title="<?= _("Shipping address") ?>"
+                 label="<?= _("Shipping address") ?>"
                  :filterable="false"/>
     <bbns-column field="billing_address"
                  :render="renderBillingAddress"
-                 title="<?= _("Billing address") ?>"
+                 label="<?= _("Billing address") ?>"
                  :filterable="false"/>
     <bbns-column field="status"
                  :width="100"
                  :component="$options.components.status"
-                 title="<?= _("Status") ?>"
+                 label="<?= _("Status") ?>"
                  :source="status"/>
-    <bbns-column ftitle="<?= _("Details") ?>"
+    <bbns-column flabel="<?= _("Details") ?>"
                  :width="40"
                  :buttons="[{
                    icon: 'nf nf-fa-eye',

@@ -40,55 +40,55 @@
         notesTypes: this.source.noteTypes,
         columns: [{
           field: "id_type",
-          title: bbn._("Type of note"),
+          label: bbn._("Type of note"),
           hidden: true,
           filterable: false,
           showable: false
         }, {
           field: 'id_provider',
           render: this.renderProvider,
-          title: bbn._("Provider"),
+          label: bbn._("Provider"),
           width: 100
         }, {
           field: 'product_type',
           source: appui.options.product_types,
-          title: bbn._("Typology"),
+          label: bbn._("Typology"),
           width: 100
         }, {
           field: 'id_edition',
           source: appui.options.editions,
-          title: bbn._("Edition type"),
+          label: bbn._("Edition type"),
           width: 130
         }, {
           field: 'price_purchase',
-          title: bbn._("Purchase price"),
+          label: bbn._("Purchase price"),
           render: this.renderPurchase,
           type: 'money',
           nullable: true,
           width: 80
         }, {
           field: 'price',
-          title: bbn._("Selling price"),
+          label: bbn._("Selling price"),
           render: this.renderSell,
           type: 'money',
           nullable: true,
           width: 80
         }, {
           field: 'dimensions',
-          title: bbn._("Dimensions"),
-          ftitle: bbn._("Dimensions") + ' ' + bbn._("Width x Height in millimeters"),
+          label: bbn._("Dimensions"),
+          flabel: bbn._("Dimensions") + ' ' + bbn._("Width x Height in millimeters"),
           width: 120
         }, {
           field: 'weight',
           render: this.renderWeight,
-          title: bbn._("Weight"),
-          ftitle: bbn._("Weight in grams"),
+          label: bbn._("Weight"),
+          flabel: bbn._("Weight in grams"),
           type: 'number',
           nullable: true,
           width: 80
         }, {
           field: 'stock',
-          title: bbn._("Stock"),
+          label: bbn._("Stock"),
           type: 'number',
           width: 80
         }]
@@ -113,10 +113,10 @@
         let src =  bbn.fn.extend(row,{
           action: 'publish'
         });
-        this.getPopup().open({
+        this.getPopup({
           width: 800,
           height: '80%',
-          title: bbn._('Publish Note'),
+          label: bbn._('Publish Note'),
           source: src,
           component: this.$options.components.form,
         });
@@ -221,7 +221,7 @@
           scrollable: true,
           width: 800,
           height: 700,
-          title: bbn._('Media'),
+          label: bbn._('Media'),
           source : a,
           component: 'appui-shop-product-media-browser',
         });
@@ -288,8 +288,8 @@
       },
       insert(){
         bbn.fn.log("insert");
-        this.getPopup().open({
-          title: bbn._('New product'),
+        this.getPopup({
+          label: bbn._('New product'),
           source : {
             row: {
             }
@@ -339,7 +339,7 @@
   <bbn-toolbar class="bbn-header bbn-hspadding bbn-h-100 bg-colored">
     <div class="bbn-flex-width">
       <bbn-button icon="nf nf-fa-plus"
-                  :text="_('Create new product')"
+                  :label="_('Create new product')"
                   :action="insert"/>
       <div class="bbn-xl bbn-b bbn-flex-fill bbn-r bbn-white">
         <?= _("The Content Management System") ?>

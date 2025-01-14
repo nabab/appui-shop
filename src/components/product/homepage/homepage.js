@@ -21,7 +21,7 @@
         let cp = this;
         this.getPopup({
           width: '50em',
-          title: bbn._("New variant"),
+          label: bbn._("New variant"),
           component: {
             template: `
 <bbn-form :action="root + 'actions/product/insert'"

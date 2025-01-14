@@ -20,8 +20,8 @@
         })
       },
       editProvider(a){
-        this.getPopup().open({
-          title: bbn._('Edit provider'),
+        this.getPopup({
+          label: bbn._('Edit provider'),
           scrollable:true,
           source: a,
           component: 'appui-shop-provider-form',

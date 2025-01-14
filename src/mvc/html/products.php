@@ -9,6 +9,6 @@
                    :cached="true"
                    component="appui-shop-listing"
                    :source="source"
-                   title="<?= _("Products' list") ?>"></bbn-container>
+                   label="<?= _("Products' list") ?>"></bbn-container>
   </bbn-router>
 </div>

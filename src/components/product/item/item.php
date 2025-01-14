@@ -17,34 +17,34 @@
                v-text="source.title"/>
           </div>
           <div class="bbn-padding-left bbn-nowrap">
-            <bbn-button text="<?= _("Edit product") ?>"
+            <bbn-button label="<?= _("Edit product") ?>"
                         :notext="true"
                         @click="openEditor"
                         class="bbn-right-xspace"
                         icon="nf nf-fa-edit"/>
-            <bbn-button text="<?= _("Add translation") ?>"
+            <bbn-button label="<?= _("Add translation") ?>"
                         :notext="true"
                         @click="addTranslation"
                         class="bbn-right-xspace"
                         icon="nf nf-mdi-translate"/>
-            <bbn-button text="<?= _("Sales statictics") ?>"
+            <bbn-button label="<?= _("Sales statictics") ?>"
                         :notext="true"
                         class="bbn-right-xspace"
                         icon="nf nf-oct-graph"/>
             <bbn-button v-if="source.id_main && !source.cart_number"
-                        text="<?= _("Delete variant") ?>"
+                        label="<?= _("Delete variant") ?>"
                         :notext="true"
                         @click="deleteVariant"
                         class="bbn-right-space"
                         icon="nf nf-fa-trash_o"/>
             <bbn-button v-if="source.id_main && source.cart_number && source.active"
-                        text="<?= _("Deactivate variant") ?>"
+                        label="<?= _("Deactivate variant") ?>"
                         :notext="true"
                         @click="deactivateVariant"
                         class="bbn-right-space"
                         icon="nf nf-cod-stop_circle"/>
             <bbn-button v-if="source.id_main && source.cart_number && !source.active"
-                        text="<?= _("Activate variant") ?>"
+                        label="<?= _("Activate variant") ?>"
                         :notext="true"
                         @click="activateVariant"
                         class="bbn-right-space"

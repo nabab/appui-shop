@@ -19,9 +19,9 @@
                :hidden="true">
     </bbns-column>
     <bbns-column field="name"
-                 title="<?= _("Name") ?>">
+                 label="<?= _("Name") ?>">
     </bbns-column>
-    <bbns-column title="<?= _("Emails") ?>"
+    <bbns-column label="<?= _("Emails") ?>"
                  field="emails"
                  :component="$options.components.providerEmails">
     </bbns-column>
@@ -30,15 +30,15 @@
                  :hidden="true">
     </bbns-column>
     <bbns-column :width="220"
-                  title="<?= _("Actions") ?>"
+                  label="<?= _("Actions") ?>"
                   cls="bbn-c"
                   :buttons="[{
                     icon: 'nf nf-fa-edit',
-                    title: '<?= _('Edit Provider') ?>',
+                    label: '<?= _('Edit Provider') ?>',
                     action: 'edit'
                   }, {
                     icon: 'nf nf-mdi-delete',
-                    title: '<?= _('Delete Provider') ?>',
+                    label: '<?= _('Delete Provider') ?>',
                     action: deleteProvider
                   }]">
     </bbns-column>

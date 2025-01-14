@@ -64,23 +64,23 @@
                      class="bbn-no-border">
             <bbns-column field="product"
                         :width="100"
-                        title="<?= _("Title") ?>"
+                        label="<?= _("Title") ?>"
                         :render="renderTitle"/>
             <bbns-column field="product"
                         :render="renderProduct"
-                        title="<?= _("Product") ?>"
+                        label="<?= _("Product") ?>"
                         :width="150"/>
             <bbns-column field="quantity"
                         :width="50"
-                        title="<?= _("Qty") ?>"/>
+                        label="<?= _("Qty") ?>"/>
             <bbns-column field="product.price"
                         :width="50"
-                        title="<?= _("Price") ?>"
+                        label="<?= _("Price") ?>"
                         :render="renderPrice"/>
             <bbns-column field="product"
                         :width="100"
                         :render="renderProvider"
-                        title="<?= _("Provider") ?>"/>
+                        label="<?= _("Provider") ?>"/>
           </bbn-table>
         </div>
       </div>
