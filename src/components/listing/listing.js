@@ -197,7 +197,7 @@
             this.addMedia(row);
           },
           text: bbn._("Add media"),
-          icon: 'nf nf-mdi-attachment',
+          icon: 'nf nf-md-attachment',
           key: 'd'
         }, {
           action: () => {

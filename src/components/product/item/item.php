@@ -26,7 +26,7 @@
                         :notext="true"
                         @click="addTranslation"
                         class="bbn-right-xspace"
-                        icon="nf nf-mdi-translate"/>
+                        icon="nf nf-md-translate"/>
             <bbn-button label="<?= _("Sales statictics") ?>"
                         :notext="true"
                         class="bbn-right-xspace"
@@ -51,7 +51,7 @@
                         icon="nf nf-cod-play_circle"/>
             <bbn-context :source="[]"
                          class="bbn-left-sspace">
-              <i class="nf nf-mdi-dots_horizontal bbn-lg bbn-p"/>
+              <i class="nf nf-md-dots_horizontal bbn-lg bbn-p"/>
             </bbn-context>
           </div>
         </div>

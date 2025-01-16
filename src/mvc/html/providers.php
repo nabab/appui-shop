@@ -37,7 +37,7 @@
                     label: '<?= _('Edit Provider') ?>',
                     action: 'edit'
                   }, {
-                    icon: 'nf nf-mdi-delete',
+                    icon: 'nf nf-md-delete',
                     label: '<?= _('Delete Provider') ?>',
                     action: deleteProvider
                   }]">
