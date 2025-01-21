@@ -60,7 +60,7 @@
       "items": [
         {
           "text": "Notes",
-          "code": "appui-note",
+          "code": "note",
           "items": [
             {
               "text": "Notes types",
