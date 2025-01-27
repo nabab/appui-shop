@@ -7,7 +7,7 @@
 
   <label><?= _("Public URL") ?></label>
   <appui-note-field-url :source="source"
-                        prefix="product/"
+                        pref="product/"
                         v-model="source.url"
                         :readonly="true"/>
 

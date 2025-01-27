@@ -21,7 +21,7 @@
     </label>
     <appui-note-field-url :source="formData"
                           class="bbn-wider"
-                          :prefix="prefix"
+                          :pref="pref"
                           v-model="formData.url"/>
 
     <label class="bbn-b">

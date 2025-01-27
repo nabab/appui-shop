@@ -35,7 +35,7 @@
 
     <label v-text="_('Public URL')"/>
     <appui-note-field-url :source="source"
-                        prefix="product/"
+                        pref="product/"
                         />
   </div>
 </bbn-form>`,
