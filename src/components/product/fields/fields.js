@@ -53,7 +53,7 @@
                              :limit="50"
                              path-name="path"
                              :upload="root + 'media/actions/upload'"
-                             :remove="root + 'media/actions/remove'"/>
+                             :removed="root + 'media/actions/remove'"/>
 </div>
         `,
         props: {

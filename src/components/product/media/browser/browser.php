@@ -11,5 +11,5 @@
                            @download="browserDownload"
                            :download="root + 'actions/media/file'"
                            :upload="root + 'media/actions/upload'"
-                           :remove="root + 'media/actions/remove'">
+                           :removed="root + 'media/actions/remove'">
 </appui-note-media-browser2>
