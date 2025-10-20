@@ -1,5 +1,5 @@
 <div class="appui-shop-product bbn-overlay">
-  <bbn-router :nav="true">
+  <bbn-router mode="tabs">
     <bbn-container component="appui-shop-product-homepage"
                    url="home"
                    :pinned="true"

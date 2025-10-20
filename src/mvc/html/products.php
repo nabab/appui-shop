@@ -1,6 +1,6 @@
 <!-- HTML Document -->
 <div class="bbn-overlay appui-shop-products-container">
-  <bbn-router :nav="true"
+  <bbn-router mode="tabs"
               :storage="true"
               :base-url="root + 'products/'"
               :autoload="true">
