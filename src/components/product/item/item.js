@@ -20,12 +20,12 @@
     },
     computed: {
       isPublished() {
-        let start = dayjs(this.source.start);
+        let start = bbn.date(this.source.start);
         if (start.isBefore(new Date())) {
           if (!this.source.end) {
             return true;
           }
-          let end = dayjs(this.source.end);
+          let end = bbn.date(this.source.end);
           return end.isAfter(newDate());
         }
         return false;
