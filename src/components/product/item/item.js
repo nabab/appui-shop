@@ -20,12 +20,12 @@
     },
     computed: {
       isPublished() {
-        let start = bbn.date(this.source.start);
+        let start = bbn.dt(this.source.start);
         if (start.isBefore(new Date())) {
           if (!this.source.end) {
             return true;
           }
-          let end = bbn.date(this.source.end);
+          let end = bbn.dt(this.source.end);
           return end.isAfter(newDate());
         }
         return false;
