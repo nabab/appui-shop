@@ -1,10 +1,5 @@
 <?php
-/*
- * Describe what it does!
- *
- * @var bbn\Mvc\Controller $ctrl 
- *
- */
+/** @var bbn\Mvc\Controller $ctrl */
 $success = false;
 if ( $id_media = $ctrl->arguments[0] ){
   $medias = new \bbn\Appui\Medias($ctrl->db);

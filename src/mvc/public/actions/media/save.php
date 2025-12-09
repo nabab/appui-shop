@@ -1,11 +1,6 @@
 <?php
 use bbn\Str;
-/*
- * Describe what it does!
- *
- * @var bbn\Mvc\Controller $ctrl 
- *
- */
+/** @var bbn\Mvc\Controller $ctrl */
 
 $success = false;
 if (!empty($ctrl->post['media']['file']) && ($title = $ctrl->post['media']['title'] ) ){
